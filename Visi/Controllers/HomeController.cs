@@ -11,12 +11,11 @@ namespace Visi.Controllers
 	{
 		public ActionResult Index ()
 		{
-			var mvcName = typeof(Controller).Assembly.GetName ();
-			var isMono = Type.GetType ("Mono.Runtime") != null;
+			return View ();
+		}
 
-			ViewData ["Version"] = mvcName.Version.Major;
-			ViewData ["Runtime"] = isMono ? "Mono" : ".NET";
-
+		public ActionResult Home ()
+		{
 			return View ();
 		}
 	}

@@ -67,6 +67,9 @@
     <Folder Include="Content\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\" />
+    <Folder Include="fonts\" />
+    <Folder Include="images\" />
+    <Folder Include="images\projetos\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
@@ -83,6 +86,77 @@
     <Content Include="Web.config" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
+    <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\Shared\_Menu.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\index.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
+    <Content Include="Scripts\jquery.hGrid.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\main2.js" />
+    <Content Include="Content\animate.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\footer.css" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\typografy.css" />
+    <Content Include="fonts\bank_gothic_light.eot" />
+    <Content Include="fonts\bank_gothic_light.svg" />
+    <Content Include="fonts\bank_gothic_light.ttf" />
+    <Content Include="fonts\bank_gothic_light.woff" />
+    <Content Include="fonts\bank_gothic_medium.eot" />
+    <Content Include="fonts\bank_gothic_medium.svg" />
+    <Content Include="fonts\bank_gothic_medium.ttf" />
+    <Content Include="fonts\bank_gothic_medium.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\Gotham-Book.eot" />
+    <Content Include="fonts\Gotham-Book.otf" />
+    <Content Include="fonts\Gotham-Book.svg" />
+    <Content Include="fonts\Gotham-Book.ttf" />
+    <Content Include="fonts\Gotham-Book.woff" />
+    <Content Include="fonts\Gotham-Light.eot" />
+    <Content Include="fonts\Gotham-Light.otf" />
+    <Content Include="fonts\Gotham-Light.svg" />
+    <Content Include="fonts\Gotham-Light.ttf" />
+    <Content Include="fonts\Gotham-Light.woff" />
+    <Content Include="fonts\Gotham-Medium.eot" />
+    <Content Include="fonts\Gotham-Medium.otf" />
+    <Content Include="fonts\Gotham-Medium.svg" />
+    <Content Include="fonts\Gotham-Medium.ttf" />
+    <Content Include="fonts\Gotham-Medium.woff" />
+    <Content Include="fonts\Gotham-Thin.eot" />
+    <Content Include="fonts\Gotham-Thin.otf" />
+    <Content Include="fonts\Gotham-Thin.svg" />
+    <Content Include="fonts\Gotham-Thin.ttf" />
+    <Content Include="fonts\Gotham-Thin.woff" />
+    <Content Include="fonts\Gotham-XLight.eot" />
+    <Content Include="fonts\Gotham-XLight.otf" />
+    <Content Include="fonts\Gotham-XLight.svg" />
+    <Content Include="fonts\Gotham-XLight.ttf" />
+    <Content Include="fonts\Gotham-XLight.woff" />
+    <Content Include="images\foto-escritorio-menor.jpg" />
+    <Content Include="images\foto-escritorio.jpg" />
+    <Content Include="images\icon-facebook.png" />
+    <Content Include="images\icon-instagram.png" />
+    <Content Include="images\logo-2-visi-menor.png" />
+    <Content Include="images\logo-visi-menor.png" />
+    <Content Include="images\logo-visi.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\projetos\miniatura001.jpg" />
+    <Content Include="images\projetos\miniatura002.png" />
+    <Content Include="images\projetos\miniatura003.jpg" />
+    <Content Include="images\projetos\miniatura004.jpg" />
+    <Content Include="images\projetos\miniatura005.png" />
+    <Content Include="images\projetos\miniatura006.jpg" />
+    <Content Include="images\projetos\miniatura007.png" />
+    <Content Include="images\projetos\miniatura008.jpg" />
+    <Content Include="images\projetos\miniatura009.jpg" />
+    <Content Include="images\projetos\miniatura010.jpg" />
+    <Content Include="images\projetos\miniatura011.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
@@ -92,4 +166,7 @@
       </Properties>
     </MonoDevelop>
   </ProjectExtensions>
+  <ItemGroup>
+    <None Include="fonts\fonts visiarq.zip" />
+  </ItemGroup>
 </Project>

@@ -1,0 +1,46 @@
+body {
+	color: #666;
+	font-family: 'Gotham-Book', 'Arial', sans-serif;
+}
+.logo {
+	text-indent: -9999px;
+	width: 196px;
+	height: 19px;
+	background-image: url('/images/logo-visi.png');
+}
+.navbar-default {
+	background-color: white;
+}
+.box-lateral {
+	margin: 45px 0 0 0;
+	padding: 25px 5px 5px 30px;
+	border-left: 1px solid #e7e7e7;
+}
+.icon-facebook, .icon-instagram {
+	text-indent: -9999px;
+	width: 30px;
+	height: 28px;
+}
+.icon-instagram {
+	background-image: url('/images/icon-instagram.png')
+}
+.icon-facebook {
+	background-image: url('/images/icon-facebook.png')
+}
+figure {
+	display: inline-block;
+	margin: 5px;
+}
+figure img {
+	width: 370px;
+	height: 150px;
+}
+.footer {
+	background-color: white;
+	border-top: 1px solid #e7e7e7;
+	bottom: 1px;
+}
+/*-- Home --*/
+.img-home {
+	padding: 5px;
+}
