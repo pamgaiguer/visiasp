@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Visi.Controllers
 {
-    public class Equipe : Controller
+    public class EquipeController : Controller
     {
         public ActionResult Index()
         {
