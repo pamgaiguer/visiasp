@@ -17,7 +17,7 @@ namespace Visi
 			routes.MapRoute (
 				"Default",
 				"{controller}/{action}/{id}",
-				new { controller = "Home", action = "Index", id = "" }
+				new { controller = "Welcome", action = "Index", id = "" }
 			);
 
 		}

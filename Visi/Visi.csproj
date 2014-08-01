@@ -64,43 +64,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\" />
     <Folder Include="Models\" />
-    <Folder Include="Scripts\" />
     <Folder Include="fonts\" />
     <Folder Include="images\" />
     <Folder Include="images\projetos\" />
+    <Folder Include="js\" />
+    <Folder Include="css\" />
+    <Folder Include="Views\Welcome\" />
+    <Folder Include="Views\Projetos\" />
+    <Folder Include="Views\Equipe\" />
+    <Folder Include="Views\Contato\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\WelcomeController.cs" />
+    <Compile Include="Models\ImagemProjeto.cs" />
+    <Compile Include="Controllers\EquipeController.cs" />
+    <Compile Include="Controllers\ContatoController.cs" />
+    <Compile Include="Controllers\ProjetosController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
-    <Content Include="Views\Home\Home.cshtml" />
     <Content Include="Views\Shared\_Menu.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\index.js" />
-    <Content Include="Scripts\jquery-2.1.1.min.js" />
-    <Content Include="Scripts\jquery.hGrid.js" />
-    <Content Include="Scripts\main.js" />
-    <Content Include="Scripts\main2.js" />
-    <Content Include="Content\animate.css" />
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\footer.css" />
-    <Content Include="Content\main.css" />
-    <Content Include="Content\typografy.css" />
     <Content Include="fonts\bank_gothic_light.eot" />
     <Content Include="fonts\bank_gothic_light.svg" />
     <Content Include="fonts\bank_gothic_light.ttf" />
@@ -157,6 +152,23 @@
     <Content Include="images\projetos\miniatura009.jpg" />
     <Content Include="images\projetos\miniatura010.jpg" />
     <Content Include="images\projetos\miniatura011.jpg" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\index.js" />
+    <Content Include="js\jquery-2.1.1.min.js" />
+    <Content Include="js\jquery.hGrid.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\main2.js" />
+    <Content Include="css\animate.css" />
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\footer.css" />
+    <Content Include="css\main.css" />
+    <Content Include="css\typografy.css" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Welcome\Index.cshtml" />
+    <Content Include="Views\Equipe\Index.cshtml" />
+    <Content Include="Views\Contato\Index.cshtml" />
+    <Content Include="Views\Projetos\Index.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
