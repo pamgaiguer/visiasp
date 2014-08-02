@@ -11,7 +11,7 @@ namespace VisiProj.Controllers
 	{
 		public ActionResult Index ()
 		{
-			List<ImagemProjeto> imagens = new List<ImagemProjeto> ();
+            List<ImagemProjetoModel> imagens = new List<ImagemProjetoModel>();
 			string ext = "jpg";
 
 			for (int i = 1; i <= 11; i++) {
@@ -20,7 +20,8 @@ namespace VisiProj.Controllers
 				else
 					ext = "jpg";
 
-				imagens.Add (new ImagemProjeto(){
+                imagens.Add(new ImagemProjetoModel()
+                {
 					UrlNormal = String.Format("/images/projetos/miniatura{0}.{1}", i.ToString().PadLeft(3, '0'), ext),
 					Id = i.ToString().PadLeft(3, '0'),
 					UrlPequena = String.Format("miniatura{0}.{1}", i.ToString().PadLeft(3, '0'), ext),

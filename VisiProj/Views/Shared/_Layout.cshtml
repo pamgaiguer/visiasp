@@ -13,9 +13,13 @@
 		<link rel="stylesheet" href="/css/main.css" />
 		@RenderSection("stylesheets", required: false)
 	</head>
-	<body>
+	<body>        
 		@Html.Partial("_Menu")
 		@RenderBody()
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div>Opa @User.Identity.Name, quer sair? Clica <span><a href="/admin/logout">aqui =D</a></span></div>
+        }
 		@Html.Partial("_Footer")
 		<script src="/js/jquery-2.1.1.min.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
