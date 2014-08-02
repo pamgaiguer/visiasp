@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Ajax;
 
-namespace Visi.Controllers
+namespace VisiProj.Controllers
 {
 	public class HomeController : Controller
 	{

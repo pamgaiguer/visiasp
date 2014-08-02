@@ -4,9 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Visi.Controllers
+namespace VisiProj.Controllers
 {
-    public class WelcomeController : Controller
+    public class ProjetosController : Controller
     {
         public ActionResult Index()
         {

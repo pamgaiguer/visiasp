@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Visi
+namespace VisiProj
 {
 	public class ImagemProjeto
 	{
