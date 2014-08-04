@@ -1,28 +1,32 @@
 ﻿<!DOCTYPE html>
 <html lang="pt-br">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=emulateIE10">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="">
-		<meta name="author" content="">
-		<title>VISI | @ViewBag.Title</title>
-		<link rel="stylesheet" href="/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="/css/footer.css"/>
-		<link rel="stylesheet" href="/css/typografy.css">		
-		<link rel="stylesheet" href="/css/main.css" />
-		@RenderSection("stylesheets", required: false)
-	</head>
-	<body>        
-		@Html.Partial("_Menu")
-		@RenderBody()
-        @if (User.Identity.IsAuthenticated)
-        {
-            <div>Opa @User.Identity.Name, quer sair? Clica <span><a href="/admin/logout">aqui =D</a></span></div>
-        }
-		@Html.Partial("_Footer")
-		<script src="/js/jquery-2.1.1.min.js"></script>
-		<script src="/js/bootstrap.min.js"></script>
-		@RenderSection("javascripts", required: false)
-	</body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=emulateIE10">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>VISI | @ViewBag.Title</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link rel="stylesheet" href="/css/typografy.css">
+    <link rel="stylesheet" href="/css/main.css" />
+    @RenderSection("stylesheets", required: false)
+</head>
+<body>
+    @Html.Partial("_Menu")
+    @RenderBody()
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="container">
+            <div class="row">
+                <div>Opa @User.Identity.Name, quer sair? Clica <span><a href="/admin/logout">aqui =D</a></span></div>
+            </div>
+        </div>
+    }
+    @Html.Partial("_Footer")
+    <script src="/js/jquery-2.1.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    @RenderSection("javascripts", required: false)
+</body>
 </html>

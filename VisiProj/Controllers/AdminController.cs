@@ -31,7 +31,7 @@ namespace VisiProj.Controllers
             if (login.Username == "admin" && login.Password == "1q2w3e4r")
             {
                 new FormsAuthenticationService().SignIn("admin", false, String.Empty);
-                return Index();
+                return RedirectToAction("Index");
             } else
             {
                 ViewBag.ErrorMessage = "User ou pass incorreto(s).";
