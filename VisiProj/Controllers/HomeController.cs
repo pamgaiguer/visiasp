@@ -23,7 +23,7 @@ namespace VisiProj.Controllers
                 imagens.Add(new ImagemProjetoModel()
                 {
 					UrlNormal = String.Format("/images/projetos/miniatura{0}.{1}", i.ToString().PadLeft(3, '0'), ext),
-					Id = i.ToString().PadLeft(3, '0'),
+					Id = i,
 					UrlPequena = String.Format("miniatura{0}.{1}", i.ToString().PadLeft(3, '0'), ext),
 					Nome = "nomex1",
 					Classificadores = "residencial 2010-2014 completo"

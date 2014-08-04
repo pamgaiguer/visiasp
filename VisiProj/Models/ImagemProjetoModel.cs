@@ -4,7 +4,7 @@ namespace VisiProj
 {
     public class ImagemProjetoModel
     {
-        public string Id
+        public int Id
         {
             get;
             set;
