@@ -28,9 +28,9 @@
                     <td>@item.Imagens.Count</td>
                     <td>
                         @Html.ActionLink("Imagens", "Index", "ImagemProjeto", new { id = item.Id }, null) |
-                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                        @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Detalhes", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Excluir", "Delete", new { id = item.Id })
                     </td>
                 </tr>
             }

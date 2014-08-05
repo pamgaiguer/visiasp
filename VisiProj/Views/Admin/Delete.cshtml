@@ -3,70 +3,74 @@
 @{
     ViewBag.Title = "Delete";
 }
+<div class="container">
+    <div class="row">
+        <h2>Apagar projeto</h2>
 
-<h2>Delete</h2>
+        <h3>Tem certeza que deseja apagar este projeto?</h3>
+        <div>
+            <h4>ProjetoModel</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </dt>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>ProjetoModel</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Nome)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Data)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Data)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Data)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Data)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Local)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Local)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Local)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Local)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Area)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Area)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Area)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Area)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.CreatedAt)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CreatedAt)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.CreatedAt)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.CreatedAt)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Updatedat)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Updatedat)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Updatedat)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Updatedat)
-        </dd>
+            </dl>
 
-    </dl>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+                <div class="form-actions no-color">
+                    <input type="submit" value="Excluir" class="btn btn-link" /> |
+                    @Html.ActionLink("Voltar a lista", "Index")
+                </div>
+            }
         </div>
-    }
+    </div>
 </div>
