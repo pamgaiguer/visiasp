@@ -14,6 +14,7 @@ namespace VisiProj.Models
         public DateTime Data { get; set; }
         public string Local { get; set; }
         public string Area { get; set; }
+        public virtual ICollection<ImagemProjetoModel> Imagens { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? Updatedat { get; set; }
         public bool Deleted { get; set; }

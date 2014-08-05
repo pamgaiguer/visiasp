@@ -52,6 +52,7 @@ namespace VisiProj.Controllers
         {
             if (ModelState.IsValid)
             {
+                projetoModel.Nome = projetoModel.Nome.ToUpper();
                 projetoModel.CreatedAt = DateTime.Now;
                 db.Projetos.Add(projetoModel);
                 db.SaveChanges();
@@ -81,7 +82,7 @@ namespace VisiProj.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome,Data,Local,Area")] ProjetoModel projetoModel)
+        public ActionResult Edit([Bind(Include = "Id,Nome,Data,Local,Area,CreatedAt")] ProjetoModel projetoModel)
         {
             if (ModelState.IsValid)
             {

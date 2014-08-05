@@ -1,0 +1,58 @@
+﻿@model VisiProj.Models.ImagemProjetoModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ImagemProjetoModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UrlNormal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrlNormal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UrlPequena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UrlPequena)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Local)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Local)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Classificadores)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Classificadores)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index", new { id = Model.Projeto.Id })
+</p>

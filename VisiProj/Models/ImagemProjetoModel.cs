@@ -1,14 +1,12 @@
 ﻿using System;
 
-namespace VisiProj
+namespace VisiProj.Models
 {
     public class ImagemProjetoModel
     {
-        public int Id
-        {
-            get;
-            set;
-        }
+        public int Id { get; set; }
+
+        public virtual ProjetoModel Projeto { get; set; }
 
         public string UrlNormal
         {

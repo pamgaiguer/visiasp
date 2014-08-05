@@ -1,0 +1,58 @@
+﻿@model IEnumerable<VisiProj.Models.ImagemProjetoModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Criar imagem", "Create", new { id = (int)ViewBag.ProjetoId }, new { @class = "btn btn-default" })
+    @Html.ActionLink("Voltar para projetos", "Index", "Admin", new { id = (int)ViewBag.ProjetoId }, new { @class = "btn btn-default" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UrlNormal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UrlPequena)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Local)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Classificadores)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrlNormal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UrlPequena)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Local)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Classificadores)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

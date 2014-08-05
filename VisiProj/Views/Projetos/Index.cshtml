@@ -1,22 +1,32 @@
-﻿@{
+﻿@model IEnumerable<VisiProj.Models.ProjetoModel>
+
+@{
     ViewBag.Title = "Projetos";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    int activeId = (int?)ViewBag.ActiveId == null ? 0 : (int)ViewBag.ActiveId;
+    List<VisiProj.Models.ImagemProjetoModel> images = ViewBag.Imagens;
 }
 
 <div class="container">
 	<div class="row">
 		<div class="col-md-3">
 			<div data-spy="affix" data-offset-top="60" data-offset-bottom="200" class="box-lateral">
-				<ul class="nav">
-					<li><a href="#">TODOS</a></li>
-					<li><a href="#">BUFFET</a></li>
-					<li><a href="#">INTERIORES</a></li>
-					<li><a href="#">RESIDENCIAL</a></li>
-				</ul>
+                <ul class="nav nav-pills nav-stacked">
+                    <li @(activeId == 0 ? "class=active" : "")><a href="/projetos">TODOS</a></li>
+                    @foreach (var item in Model)
+                    {
+                        <li @(activeId == item.Id ? "class=active" : "")>@Html.ActionLink(item.Nome, "Index", new { id = item.Id })</li>
+                    }
+                </ul>
 			</div>			
 		</div>
 		<div class="col-md-9">
-			
+            <ul>
+                @foreach (var foto in images)
+                {
+                    <li>NOME: @foto.Nome | URL GRANDE: @foto.UrlNormal | URL PEQUENA: @foto.UrlPequena | NOME PROJETO: @foto.Projeto.Nome</li>
+                }
+            </ul>
 		</div>
 	</div>
 </div>

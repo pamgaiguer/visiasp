@@ -140,6 +140,7 @@
     <Compile Include="Controllers\ContatoController.cs" />
     <Compile Include="Controllers\EquipeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImagemProjetoController.cs" />
     <Compile Include="Controllers\ProjetosController.cs" />
     <Compile Include="Controllers\WelcomeController.cs" />
     <Compile Include="Filters\BasicAuthAttribute.cs" />
@@ -162,6 +163,10 @@
     <Compile Include="Migrations\201408042200191_ChangeDataFieldTypeToDate.cs" />
     <Compile Include="Migrations\201408042200191_ChangeDataFieldTypeToDate.Designer.cs">
       <DependentUpon>201408042200191_ChangeDataFieldTypeToDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201408042233118_RelationshipIntoProjetoAndImagemProjeto.cs" />
+    <Compile Include="Migrations\201408042233118_RelationshipIntoProjetoAndImagemProjeto.Designer.cs">
+      <DependentUpon>201408042233118_RelationshipIntoProjetoAndImagemProjeto.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ImagemProjetoModel.cs" />
@@ -220,6 +225,11 @@
     <Content Include="Views\Admin\Delete.cshtml" />
     <Content Include="Views\Admin\Details.cshtml" />
     <Content Include="Views\Admin\Edit.cshtml" />
+    <Content Include="Views\ImagemProjeto\Create.cshtml" />
+    <Content Include="Views\ImagemProjeto\Delete.cshtml" />
+    <Content Include="Views\ImagemProjeto\Details.cshtml" />
+    <Content Include="Views\ImagemProjeto\Edit.cshtml" />
+    <Content Include="Views\ImagemProjeto\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -239,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201408042200191_ChangeDataFieldTypeToDate.resx">
       <DependentUpon>201408042200191_ChangeDataFieldTypeToDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408042233118_RelationshipIntoProjetoAndImagemProjeto.resx">
+      <DependentUpon>201408042233118_RelationshipIntoProjetoAndImagemProjeto.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
