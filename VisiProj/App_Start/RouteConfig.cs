@@ -14,6 +14,12 @@ namespace VisiProj
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Projetos",
+                url: "projetos/{id}",
+                defaults: new { controller = "Projetos", action = "Index", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Welcome", action = "Index", id = UrlParameter.Optional }
