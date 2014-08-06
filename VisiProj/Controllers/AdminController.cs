@@ -19,6 +19,7 @@ namespace VisiProj.Controllers
         public ActionResult Index()
         {
             List<ProjetoModel> p = db.Projetos.Where(t => !t.Deleted).ToList();
+
             return View(p);
         }
 
@@ -40,6 +41,14 @@ namespace VisiProj.Controllers
         // GET: ProjetoModels/Create
         public ActionResult Create()
         {
+            var projectList = from u in db.Categorias.ToList()
+                              select new SelectListItem
+                              {
+                                  Text = u.Nome,
+                                  Value = u.Id.ToString()
+                              };
+            ViewBag.ProjectList = projectList;
+
             return View();
         }
 
@@ -48,7 +57,7 @@ namespace VisiProj.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,Data,Local,Area")] ProjetoModel projetoModel)
+        public ActionResult Create([Bind(Include = "Id,Nome,Data,Local,CategoriaId,Area")] ProjetoModel projetoModel)
         {
             if (ModelState.IsValid)
             {
@@ -68,7 +77,17 @@ namespace VisiProj.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
+            var projectList = from u in db.Categorias.ToList()
+                              select new SelectListItem
+                              {
+                                  Text = u.Nome,
+                                  Value = u.Id.ToString()
+                              };
+            ViewBag.ProjectList = projectList;
+
             ProjetoModel projetoModel = db.Projetos.Find(id);
+
             if (projetoModel == null)
             {
                 return HttpNotFound();
@@ -81,7 +100,7 @@ namespace VisiProj.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome,Data,Local,Area")] ProjetoModel projetoModel)
+        public ActionResult Edit([Bind(Include = "Id,Nome,Data,Local,CategoriaId,Area")] ProjetoModel projetoModel)
         {
             if (ModelState.IsValid)
             {
@@ -142,7 +161,8 @@ namespace VisiProj.Controllers
             {
                 new FormsAuthenticationService().SignIn("admin", false, String.Empty);
                 return RedirectToAction("Index");
-            } else
+            }
+            else
             {
                 ViewBag.ErrorMessage = "User ou pass incorreto(s).";
                 return View();

@@ -18,7 +18,7 @@ namespace VisiProj.Controllers
         // GET: CategoriaModel
         public ActionResult Index()
         {
-            return View(db.CategoriaModels.ToList());
+            return View(db.Categorias.ToList());
         }
 
         // GET: CategoriaModel/Details/5
@@ -28,7 +28,7 @@ namespace VisiProj.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CategoriaModel categoriaModel = db.CategoriaModels.Find(id);
+            CategoriaModel categoriaModel = db.Categorias.Find(id);
             if (categoriaModel == null)
             {
                 return HttpNotFound();
@@ -51,7 +51,7 @@ namespace VisiProj.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.CategoriaModels.Add(categoriaModel);
+                db.Categorias.Add(categoriaModel);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -66,7 +66,7 @@ namespace VisiProj.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CategoriaModel categoriaModel = db.CategoriaModels.Find(id);
+            CategoriaModel categoriaModel = db.Categorias.Find(id);
             if (categoriaModel == null)
             {
                 return HttpNotFound();
@@ -97,7 +97,7 @@ namespace VisiProj.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CategoriaModel categoriaModel = db.CategoriaModels.Find(id);
+            CategoriaModel categoriaModel = db.Categorias.Find(id);
             if (categoriaModel == null)
             {
                 return HttpNotFound();
@@ -110,8 +110,8 @@ namespace VisiProj.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            CategoriaModel categoriaModel = db.CategoriaModels.Find(id);
-            db.CategoriaModels.Remove(categoriaModel);
+            CategoriaModel categoriaModel = db.Categorias.Find(id);
+            db.Categorias.Remove(categoriaModel);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -11,12 +11,12 @@ namespace VisiProj.Models
         public virtual DbSet<ProjetoModel> Projetos { get; set; }
         public virtual DbSet<ImagemProjetoModel> ImagemProjetos { get; set; }
 
+        public System.Data.Entity.DbSet<VisiProj.Models.CategoriaModel> Categorias { get; set; }
+
         public VisiContext()
             : base("Name=VisiProd")
         {
 
         }
-
-        public System.Data.Entity.DbSet<VisiProj.Models.CategoriaModel> CategoriaModels { get; set; }
     }
 }

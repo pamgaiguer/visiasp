@@ -173,6 +173,14 @@
     <Compile Include="Migrations\201408062100124_DbAdjust.Designer.cs">
       <DependentUpon>201408062100124_DbAdjust.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201408062149075_CategoriaIdToProjetoModel.cs" />
+    <Compile Include="Migrations\201408062149075_CategoriaIdToProjetoModel.Designer.cs">
+      <DependentUpon>201408062149075_CategoriaIdToProjetoModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201408062205588_CategoriaIdToProjetoModel2.cs" />
+    <Compile Include="Migrations\201408062205588_CategoriaIdToProjetoModel2.Designer.cs">
+      <DependentUpon>201408062205588_CategoriaIdToProjetoModel2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CategoriaModel.cs" />
     <Compile Include="Models\ImagemProjetoModel.cs" />
@@ -266,6 +274,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201408062100124_DbAdjust.resx">
       <DependentUpon>201408062100124_DbAdjust.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408062149075_CategoriaIdToProjetoModel.resx">
+      <DependentUpon>201408062149075_CategoriaIdToProjetoModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408062205588_CategoriaIdToProjetoModel2.resx">
+      <DependentUpon>201408062205588_CategoriaIdToProjetoModel2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
