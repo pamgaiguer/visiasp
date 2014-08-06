@@ -16,5 +16,7 @@ namespace VisiProj.Models
         {
 
         }
+
+        public System.Data.Entity.DbSet<VisiProj.Models.CategoriaModel> CategoriaModels { get; set; }
     }
 }
