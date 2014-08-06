@@ -16,7 +16,6 @@
         <table class="table table-condensed">
             <tr>
                 <th>@Html.DisplayNameFor(model => model.Nome)</th>
-                <th>@Html.DisplayNameFor(model => model.Data)</th>
                 <th>@Html.DisplayNameFor(model => model.Local)</th>
                 <th>@Html.DisplayNameFor(model => model.Area)</th>
                 <th>Imagens</th>
@@ -27,7 +26,6 @@
             {
                 <tr>
                     <td>@Html.DisplayFor(modelItem => item.Nome)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Data)</td>
                     <td>@Html.DisplayFor(modelItem => item.Local)</td>
                     <td>@Html.DisplayFor(modelItem => item.Area)</td>
                     <td>@item.Imagens.Count</td>
