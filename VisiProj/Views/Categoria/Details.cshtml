@@ -4,23 +4,30 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<div class="container">
+    <div class="row">
+        <h2>Detalhes da categoria</h2>
+        <ol class="breadcrumb">
+            Você está em:
+            <li><a href="#">Categoria</a></li>
+            <li class="active">Detalhes da categoria</li>
+        </ol>
+        <div>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </dt>
 
-<div>
-    <h4>CategoriaModel</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Nome)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-
-    </dl>
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Voltar a lista", "Index")
+        </p>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
