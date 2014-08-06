@@ -66,7 +66,7 @@ namespace VisiProj.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Projeto,UrlNormal,UrlPequena,Nome,Local,Classificadores")] ImagemProjetoModel imagemProjetoModel)
+        public ActionResult Create([Bind(Include = "Id,Projeto,UrlNormal,UrlMiniatura")] ImagemProjetoModel imagemProjetoModel)
         {
             if (ModelState.IsValid)
             {
@@ -99,7 +99,7 @@ namespace VisiProj.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Projeto,UrlNormal,UrlPequena,Nome,Local,Classificadores")] ImagemProjetoModel imagemProjetoModel)
+        public ActionResult Edit([Bind(Include = "Id,Projeto,UrlNormal,UrlMiniatura")] ImagemProjetoModel imagemProjetoModel)
         {
             if (ModelState.IsValid)
             {

@@ -25,9 +25,7 @@ namespace VisiProj.Controllers
                 {
 					UrlNormal = String.Format("/images/projetos/miniatura{0}.{1}", i.ToString().PadLeft(3, '0'), ext),
 					Id = i,
-					UrlPequena = String.Format("miniatura{0}.{1}", i.ToString().PadLeft(3, '0'), ext),
-					Nome = "nomex1",
-					Classificadores = "residencial 2010-2014 completo"
+					UrlMiniatura = String.Format("miniatura{0}.{1}", i.ToString().PadLeft(3, '0'), ext),
 				});
 			}
 

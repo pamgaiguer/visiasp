@@ -168,7 +168,12 @@
     <Compile Include="Migrations\201408042233118_RelationshipIntoProjetoAndImagemProjeto.Designer.cs">
       <DependentUpon>201408042233118_RelationshipIntoProjetoAndImagemProjeto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201408062100124_DbAdjust.cs" />
+    <Compile Include="Migrations\201408062100124_DbAdjust.Designer.cs">
+      <DependentUpon>201408062100124_DbAdjust.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\CategoriaModel.cs" />
     <Compile Include="Models\ImagemProjetoModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\ProjetoModel.cs" />
@@ -252,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201408042233118_RelationshipIntoProjetoAndImagemProjeto.resx">
       <DependentUpon>201408042233118_RelationshipIntoProjetoAndImagemProjeto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408062100124_DbAdjust.resx">
+      <DependentUpon>201408062100124_DbAdjust.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
