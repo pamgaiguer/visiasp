@@ -6,8 +6,11 @@
 <div class="container">
     <div class="row">
         <h2>Editar</h2>
-
-
+        <ol class="breadcrumb">
+            Você está em:
+            <li><a href="/ImagemProjeto/Index">Imagens dos projetos</a></li>
+            <li class="active">Editar</li>
+        </ol>
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()

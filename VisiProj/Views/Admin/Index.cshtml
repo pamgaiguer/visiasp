@@ -6,7 +6,12 @@
 <div class="container">
     <div class="row">
         <h2>Cadastrar projetos</h2>
-            @Html.ActionLink("Criar novo", "Create", null, new { @class = "btn btn-default" })
+        <ol class="breadcrumb">
+            Você está em:
+            <li>Projetos</li>
+            <li class="active">Home</li>
+        </ol>
+        @Html.ActionLink("Criar novo", "Create", null, new { @class = "btn btn-default" })
         <br /><br />
         <table class="table table-condensed">
             <tr>

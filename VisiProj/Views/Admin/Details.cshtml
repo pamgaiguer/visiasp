@@ -6,6 +6,11 @@
 <div class="container">
     <div class="row">
         <h2>Detalhes do projeto</h2>
+        <ol class="breadcrumb">
+            Você está em:
+            <li><a href="/Admin/Index/">Projetos</a></li>
+            <li class="active">Detalhes do projeto</li>
+        </ol>
         <div>
             <h4>ProjetoModel</h4>
             <hr />
@@ -60,6 +65,7 @@
 
             </dl>
         </div>
+        <br />
         <p>
             @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
             @Html.ActionLink("Voltar a lista", "Index")
