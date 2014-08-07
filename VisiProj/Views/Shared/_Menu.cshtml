@@ -16,10 +16,10 @@
 		</div>
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="/home" @(activeMenu == "Home" ? "class=active" : "")>HOME</a></li>
-				<li><a href="/projetos/" @(activeMenu == "Projetos" ? "class=active" : "")>PROJETOS</a></li>
-				<li><a href="/equipe/" @(activeMenu == "Equipe" ? "class=active" : "")>EQUIPE</a></li>
-				<li><a href="/contato/" @(activeMenu == "Contato" ? "class=active" : "")>CONTATO</a></li>
+                <li @(activeMenu == "Home" ? "class=active" : "")><a href="/home">HOME</a></li>
+                <li @(activeMenu == "Projetos" ? "class=active" : "")><a href="/projetos/">PROJETOS</a></li>
+                <li @(activeMenu == "Equipe" ? "class=active" : "")><a href="/equipe/">EQUIPE</a></li>
+                <li @(activeMenu == "Contato" ? "class=active" : "")><a href="/contato/">CONTATO</a></li>
 			</ul>
 		</div>
 	</div>
