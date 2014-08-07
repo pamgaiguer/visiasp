@@ -10,26 +10,12 @@ namespace VisiProj.Controllers
 {
 	public class HomeController : Controller
 	{
+        private VisiContext db = new VisiContext();
 		public ActionResult Index ()
 		{
-            List<ImagemProjetoModel> imagens = new List<ImagemProjetoModel>();
-			string ext = "jpg";
+            List<ImagemProjetoModel> imagens = db.ImagemProjetos.Where(t => t.Projeto != null && t.Projeto.CategoriaId > 0).ToList();
 
-			for (int i = 1; i <= 11; i++) {
-				if ("2,5,7".Contains (i.ToString ()))
-					ext = "png";
-				else
-					ext = "jpg";
-
-                imagens.Add(new ImagemProjetoModel()
-                {
-					UrlNormal = String.Format("/images/projetos/miniatura{0}.{1}", i.ToString().PadLeft(3, '0'), ext),
-					Id = i,
-					UrlMiniatura = String.Format("miniatura{0}.{1}", i.ToString().PadLeft(3, '0'), ext),
-				});
-			}
-
-			return View (imagens);
+			return View(imagens);
 		}
 	}
 }

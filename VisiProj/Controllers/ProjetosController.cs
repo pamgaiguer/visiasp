@@ -12,29 +12,45 @@ namespace VisiProj.Controllers
         private VisiContext db = new VisiContext();
 
         /// <summary>
-        /// Get projects by id project
+        /// Get categories by id category
         /// 
         /// If id is null, return all
         /// </summary>
-        /// <param name="id">Project id</param>
+        /// <param name="id">Category id</param>
         /// <returns>Html page with projects</returns>
-        public ActionResult Index(int? id)
+        public ActionResult Index(int? catId, int? projId)
         {
-            List<ProjetoModel> p = db.Projetos.Where(t => !t.Deleted).ToList();
+            List<CategoriaModel> cats = db.Categorias.ToList();
+            List<ProjetoModel> p = new List<ProjetoModel>();
             List<ImagemProjetoModel> img = new List<ImagemProjetoModel>();
 
-            if (id != null || id == 0)
-                img = p.Where(t => t.Id == id).FirstOrDefault().Imagens.ToList();
-            else
-                p.ForEach(i =>
+            if (catId != null && catId > 0)
+            {
+                p = db.Projetos.Where(proj => proj.CategoriaId == catId).ToList();
+
+                if (projId != null && projId > 0)
                 {
-                    img.AddRange(i.Imagens);
-                });
+                    img = db.Projetos.Where(proj => proj.Id == projId).FirstOrDefault().Imagens.ToList();
+                }
+                else
+                {
+                    foreach (var item in p)
+                    {
+                        img.AddRange(item.Imagens);
+                    }
+                }
+            }
+            else
+            {
+                img = db.ImagemProjetos.Where(t => t.Projeto != null).ToList();
+            }
 
-            ViewBag.ActiveId = id;
-            ViewBag.Imagens = img;
+            ViewBag.CatId = catId;
+            ViewBag.ProjId = projId;
+            ViewBag.Projects = p;
+            ViewBag.Images = img;
 
-            return View (p);
+            return View (cats);
         }
     }
 }

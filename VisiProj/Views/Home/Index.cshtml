@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<VisiProj.Models.ImagemProjetoModel>
+
 @{
     ViewBag.Title = "Home";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -8,7 +9,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			@foreach (var obj in Model) {
-				<a href="/projetos/show/@obj.Id"> <img src="@obj.UrlNormal" class='img-home'> </a>
+				<a href="/projetos/@(obj.Projeto.CategoriaId)/projeto/@(obj.Projeto.Id)"> <img src="@obj.UrlMiniatura" class='img-home'> </a>
 			}
 		</div>
 	</div>

@@ -1,10 +1,15 @@
-﻿@model IEnumerable<VisiProj.Models.ProjetoModel>
+﻿@model IEnumerable<VisiProj.Models.CategoriaModel>
 
 @{
     ViewBag.Title = "Projetos";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    
     int activeId = (int?)ViewBag.ActiveId == null ? 0 : (int)ViewBag.ActiveId;
-    List<VisiProj.Models.ImagemProjetoModel> images = ViewBag.Imagens;
+
+    List<VisiProj.Models.ProjetoModel> projects = ViewBag.Projects;
+    List<VisiProj.Models.ImagemProjetoModel> images = ViewBag.Images;
+    int CatId = ViewBag.CatId == null ? 0 : ViewBag.CatId;
+    int ProjId = ViewBag.ProjId == null ? 0 : ViewBag.ProjId;
 }
 
 <div class="container">
@@ -12,10 +17,20 @@
         <div class="col-md-3">
             <div data-spy="affix" data-offset-top="60" data-offset-bottom="200" class="box-lateral">
                 <ul class="nav nav-pills nav-stacked">
-                    <li @(activeId == 0 ? "class=active" : "")><a href="/projetos">TODOS</a></li>
+                    <li @(CatId == null || CatId == 0 ? "class=active" : "")><a href="/projetos">TODOS</a></li>
                     @foreach (var item in Model)
                     {
-                        <li @(activeId == item.Id ? "class=active" : "")>@Html.ActionLink(item.Nome, "Index", new { id = item.Id })</li>
+                        <li @(CatId == item.Id ? "class=active" : "")>@Html.ActionLink(item.Nome, "Index", new { catId = item.Id })</li>
+
+                        if (CatId == item.Id)
+                        {
+                            <ul>
+                            @foreach (var p in projects)
+                            {
+                                <li @(ProjId == p.Id ? "class=active" : "")>@Html.RouteLink(p.Nome, "Projetos", new { catId = item.Id, projId = p.Id })</li>
+                            }
+                            </ul>
+                        }
                     }
                 </ul>
             </div>
@@ -27,7 +42,7 @@
                     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                         <img src="@foto.UrlMiniatura" class=" img-responsive">
                         <div class="caption text-center">
-                            <p>@foto.Projeto.Nome</p>
+                            <p>@(foto.Projeto.Nome)</p>
                         </div>
                     </div>
                 </a>
