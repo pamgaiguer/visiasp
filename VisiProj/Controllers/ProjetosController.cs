@@ -26,7 +26,7 @@ namespace VisiProj.Controllers
 
             if (catId != null && catId > 0)
             {
-                p = db.Projetos.Where(proj => proj.CategoriaId == catId).ToList();
+                p = db.Projetos.Where(proj => proj.CategoriaId == catId && !proj.Deleted).ToList();
 
                 if (projId != null && projId > 0)
                 {
@@ -42,7 +42,7 @@ namespace VisiProj.Controllers
             }
             else
             {
-                img = db.ImagemProjetos.Where(t => t.Projeto != null).ToList();
+                img = db.ImagemProjetos.Where(t => t.Projeto != null && !t.Projeto.Deleted).ToList();
             }
 
             ViewBag.CatId = catId;

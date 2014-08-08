@@ -28,7 +28,7 @@
                             <ul class="projectList">
                             @foreach (var p in projects)
                             {
-                                <li @(ProjId == p.Id ? "class=active" : "")>@Html.RouteLink(p.Nome, "Projetos", new { catId = item.Id, projId = p.Id })</li>
+                                <li @(ProjId == p.Id ? "class=active-select" : "")>@Html.RouteLink(p.Nome, "Projetos", new { catId = item.Id, projId = p.Id })</li>
                             }
                             </ul>
                         }

@@ -13,7 +13,7 @@ namespace VisiProj.Controllers
         private VisiContext db = new VisiContext();
 		public ActionResult Index ()
 		{
-            List<ImagemProjetoModel> imagens = db.ImagemProjetos.Where(t => t.Projeto != null && t.Projeto.CategoriaId > 0).ToList();
+            List<ImagemProjetoModel> imagens = db.ImagemProjetos.Where(t => t.Projeto != null && t.Projeto.CategoriaId > 0 && !t.Projeto.Deleted).ToList();
 
 			return View(imagens);
 		}
