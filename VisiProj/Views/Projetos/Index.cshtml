@@ -37,54 +37,61 @@
             </div>
         </div>  
         <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9"  >
-            @*@foreach (var foto in images)
+
+            @if (ProjId > 0)
             {
-                <a href="#">
-                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                        <img src="@foto.UrlMiniatura" class="img-responsive">
-                        <div class="caption text-center">
-                            <p>@(foto.Projeto.Nome)</p>
-                        </div>
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        @{int countSlide = 0;}
+                        @foreach (var foto in images)
+                        {
+                            <li data-target="#carousel-example-generic" data-slide-to="@(countSlide)" @(countSlide == 0 ? "class=active" : "")></li>
+                            countSlide++;
+                        }
+
+                        @*<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>*@
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        @{countSlide = 0;}
+                        @foreach (var foto in images)
+                        {
+                            <div class="item @(countSlide == 0 ? "active" : "")">
+                                <img src="@foto.UrlNormal" alt="@foto.Projeto.Nome">
+                            </div>
+
+                            countSlide++;
+                        }
                     </div>
-                </a>
-            }*@
 
-
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    @{int countSlide = 0;}
-                    @foreach (var foto in images)
-                    {
-                        <li data-target="#carousel-example-generic" data-slide-to="@(countSlide)" @(countSlide == 0 ? "class=active" : "")></li>
-                        countSlide++;
-                    }
-
-                    @*<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>*@
-                </ol>
-
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                    @foreach (var foto in images)
-                    {
-                        <div class="item">
-                            <img src="@foto.UrlNormal" alt="@foto.Projeto.Nome">
-                        </div>
-                    }
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                    </a>
                 </div>
-
-                <!-- Controls -->
-                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                </a>
-                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
-            </div>
-
-
+            }
+            else
+            {
+                foreach (var foto in images)
+                {
+                    <a href="#">
+                        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                            <img src="@foto.UrlMiniatura" class="img-responsive">
+                            <div class="caption text-center">
+                                <p>@(foto.Projeto.Nome)</p>
+                            </div>
+                        </div>
+                    </a>
+                }
+            }
+                
         </div>
     </div>
 </div>
