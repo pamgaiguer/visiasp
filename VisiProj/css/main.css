@@ -33,9 +33,9 @@ body {
     padding: 10px 5px;
 }
 .box-lateral {
-	margin: 45px 0 0 0;
+	margin: 10px 0 0 0;
 	padding: 25px 5px 5px 30px;
-	border-left: 1px solid #e7e7e7;
+	border-left: 2px solid #e7e7e7;
 }
 .projectList li{
     list-style: none;
@@ -44,8 +44,23 @@ body {
     color: #555;
     text-align: right;
 }
+.projetoNameLink{
+    color: #000;
+}
+.projetosShow{
+    height: 768px;
+    padding: 10px 0;
+}
 .active-select a{
     font-weight: bold;
+}
+.carousel-indicators{
+}
+.carousel-indicators li{
+    border-radius: 0px;
+}
+.carousel-indicators .active{
+    background-color: #ccff00;
 }
 .icon-facebook, .icon-instagram {
 	text-indent: -9999px;
