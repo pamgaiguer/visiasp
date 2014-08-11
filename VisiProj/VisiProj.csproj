@@ -132,6 +132,7 @@
     <Content Include="js\main.js" />
     <Content Include="js\main2.js" />
     <Content Include="js\_reference.js" />
+    <Content Include="favicon.ico" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
