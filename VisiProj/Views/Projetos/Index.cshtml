@@ -76,9 +76,12 @@
                     </a>
                 </div>
                 <div class="projetoInfos">
-                    <h3>Título projeto</h3>
-                    <p>Área: <span>AreaProjeto</span></p>
-                    <p>Local: <span>LocalProjeto</span></p>
+                    @{
+                    VisiProj.Models.ProjetoModel proj = projects.Where(t => t.Id == ProjId).FirstOrDefault();
+                    }
+                    <h3>@proj.Nome</h3>
+                    <p>Área: <span>@proj.Area</span></p>
+                    <p>Local: <span>@proj.Local</span></p>
                 </div>
                 <div class="clearfix"></div>
             }
