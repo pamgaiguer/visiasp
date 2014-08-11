@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<VisiProj.Models.CategoriaModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Categorias";
 }
 <div class="container">
     <div class="row">
@@ -11,9 +11,7 @@
             <li><a href="#">Categoria</a></li>
             <li class="active">Home</li>
         </ol>
-        <p>
-            @Html.ActionLink("Criar nova categoria", "Create", null, new { @class = "btn btn-default" })
-        </p>
+        <p>@Html.ActionLink("Criar nova categoria", "Create", null, new { @class = "btn btn-default" })</p>
         <table class="table table-condensed">
             <tr>
                 <th>
@@ -35,7 +33,6 @@
                     </td>
                 </tr>
             }
-
         </table>
 </div>
 </div>

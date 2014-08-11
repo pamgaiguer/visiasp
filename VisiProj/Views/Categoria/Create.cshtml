@@ -1,7 +1,7 @@
 ﻿@model VisiProj.Models.CategoriaModel
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Nova categoria";
 }
 <div class="container">
     <div class="row">
@@ -9,7 +9,7 @@
         <ol class="breadcrumb">
             Você está em:
             <li><a href="#">Categoria</a></li>
-            <li class="active">Home</li>
+            <li class="active">Nova categoria</li>
         </ol>
         @using (Html.BeginForm())
         {
@@ -35,7 +35,7 @@
         }
 
         <div>
-            @Html.ActionLink("Voltar a lista", "Index")
+            @Html.ActionLink("Voltar a lista de categorias", "Index")
         </div>
     </div>
 </div>

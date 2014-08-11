@@ -1,28 +1,21 @@
 ﻿@model VisiProj.Models.CategoriaModel
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Excluir categoria";
 }
 <div class="container">
     <div class="row">
         <h2>Apagar categoria</h2>
-
-        <h3>Tem certeza que deseja apagar esta categoria?</h3>
         <ol class="breadcrumb">
             Você está em:
             <li><a href="#">Categoria</a></li>
-            <li class="active">Excluir Categoria</li>
+            <li class="active">Excluir categoria</li>
         </ol>
+        <h4>Tem certeza que deseja excluir esta categoria?</h4>
         <hr />
         <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Nome)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Nome)
-            </dd>
-
+            <dt>@Html.DisplayNameFor(model => model.Nome)</dt>
+            <dd>@Html.DisplayFor(model => model.Nome)</dd>
         </dl>
 
         @using (Html.BeginForm())
@@ -30,8 +23,8 @@
             @Html.AntiForgeryToken()
 
             <div class="form-actions no-color">
-                <input type="submit" value="Excluir" class="btn btn-link" /> |
-                @Html.ActionLink("Voltar a lista", "Index")
+                <input type="submit" value="Excluir" class="btn btn-link"> |
+                @Html.ActionLink("Voltar a lista de categorias", "Index")
             </div>
         }
     </div>

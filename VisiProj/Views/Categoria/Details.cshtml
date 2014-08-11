@@ -1,33 +1,27 @@
 ﻿@model VisiProj.Models.CategoriaModel
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalhar categoria";
 }
 
 <div class="container">
     <div class="row">
-        <h2>Detalhes da categoria</h2>
+        <h2>Detalhar categoria</h2>
         <ol class="breadcrumb">
             Você está em:
             <li><a href="#">Categoria</a></li>
-            <li class="active">Detalhes da categoria</li>
+            <li class="active">Detalhar categoria</li>
         </ol>
         <div>
-            <hr />
+            <hr>
             <dl class="dl-horizontal">
-                <dt>
-                    @Html.DisplayNameFor(model => model.Nome)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Nome)
-                </dd>
-
+                <dt>@Html.DisplayNameFor(model => model.Nome)</dt>
+                <dd>@Html.DisplayFor(model => model.Nome)</dd>
             </dl>
         </div>
         <p>
-            @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
-            @Html.ActionLink("Voltar a lista", "Index")
+            @Html.ActionLink("Editar categoria", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Voltar a lista de categorias", "Index")
         </p>
     </div>
 </div>
