@@ -36,7 +36,7 @@ namespace VisiProj.Controllers
                 {
                     foreach (var item in p)
                     {
-                        img.AddRange(item.Imagens);
+                        img.Add(item.Imagens.First());
                     }
                 }
             }
