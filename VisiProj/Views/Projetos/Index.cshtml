@@ -4,7 +4,7 @@
     ViewBag.Title = "Projetos";
     ViewBag.ActiveMenu = "Projetos";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    
+
     int activeId = (int?)ViewBag.ActiveId == null ? 0 : (int)ViewBag.ActiveId;
 
     List<VisiProj.Models.ProjetoModel> projects = ViewBag.Projects;
@@ -15,7 +15,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" >
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
             <div data-spy="affix" data-offset-top="60" data-offset-bottom="200" class="box-lateral">
                 <ul class="nav nav-pills nav-stacked">
                     <li @(CatId == null || CatId == 0 ? "class=active" : "")><a href="/projetos">TODOS</a></li>
@@ -26,17 +26,17 @@
                         if (CatId == item.Id)
                         {
                             <ul class="projectList">
-                            @foreach (var p in projects)
-                            {
-                                <li @(ProjId == p.Id ? "class=active-select" : "")>@Html.RouteLink(p.Nome, "Projetos", new { catId = item.Id, projId = p.Id })</li>
-                            }
+                                @foreach (var p in projects)
+                                {
+                                    <li @(ProjId == p.Id ? "class=active-select" : "")>@Html.RouteLink(p.Nome, "Projetos", new { catId = item.Id, projId = p.Id })</li>
+                                }
                             </ul>
                         }
                     }
                 </ul>
             </div>
-        </div>  
-        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9"  >
+        </div>
+        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
 
             @if (ProjId > 0)
             {
@@ -63,11 +63,10 @@
                             <div class="item @(countSlide == 0 ? "active" : "")">
                                 <img src="@foto.UrlNormal" alt="@foto.Projeto.Nome">
                             </div>
-
                             countSlide++;
                         }
-                    </div>
 
+                    </div>
                     <!-- Controls -->
                     <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
                         <span class="glyphicon glyphicon-chevron-left"></span>
@@ -76,6 +75,12 @@
                         <span class="glyphicon glyphicon-chevron-right"></span>
                     </a>
                 </div>
+                <div class="projetoInfos">
+                    <h3>Título projeto</h3>
+                    <p>Área: <span>AreaProjeto</span></p>
+                    <p>Local: <span>LocalProjeto</span></p>
+                </div>
+                <div class="clearfix"></div>
             }
             else
             {
@@ -91,7 +96,7 @@
                     </a>
                 }
             }
-                
+
         </div>
     </div>
 </div>
