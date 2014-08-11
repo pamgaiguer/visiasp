@@ -42,7 +42,8 @@ namespace VisiProj.Controllers
             }
             else
             {
-                img = db.ImagemProjetos.Where(t => t.Projeto != null && !t.Projeto.Deleted).ToList();
+                img = db.ImagemProjetos.Where(t => t.Projeto != null && !t.Projeto.Deleted)
+                    .GroupBy(t => t.Projeto.Id, (key, g) => g.OrderBy(e => e.Id).FirstOrDefault()).ToList();
             }
 
             ViewBag.CatId = catId;
