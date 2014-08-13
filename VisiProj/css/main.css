@@ -1,92 +1,156 @@
 body {
-	color: #666;
-	font-family: 'Gotham-Book', 'Arial', sans-serif;
+    color: #666;
+    background-color: rgba(255,255,255,0.9);
+    font-family: 'Gotham-Book', 'Arial', sans-serif;
 }
+
 .logo {
-	text-indent: -9999px;
-	width: 196px;
-	height: 19px;
-	background-image: url('/images/logo-visi.png');
+    text-indent: -9999px;
+    width: 196px;
+    height: 19px;
+    background-image: url('/images/logo-visi.png');
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
+
 .navbar-default {
-	background-color: white;
+    background-color: white;
 }
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover,.navbar-default .navbar-nav>.active>a:focus{
-    background-color: transparent;
-    border-bottom: 2px solid #CCFF00;
-    padding-bottom: 0px;
+
+    .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+        background-color: transparent;
+        border-bottom: 2px solid #CCFF00;
+        padding-bottom: 0px;
+        color: #3c3c3c;
+    }
+.navbar-default .navbar-nav>li>a{
+    color: #3c3c3c;
 }
-.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
     background-color: transparent;
     border-bottom: 2px solid #CCFF00;
     padding-bottom: 0px;
     color: #000;
 }
-.nav>li>a{
+
+.nav > li > a {
     color: #555;
 }
-.nav>li>a:hover, .nav>li>a:focus{
-    background-color: transparent;
-    color: #000;
+
+    .nav > li > a:hover, .nav > li > a:focus {
+        background-color: transparent;
+        color: #000;
+    }
+
+.nav > li > a {
+    padding: 10px 0 10px 0;
 }
-.nav>li>a {
-    padding: 10px 5px;
+.nav-stacked>li+li{
+    margin-top: 0px;
 }
+
+@media (min-width: 768px) {
+    .navbar-nav > li {
+        margin: 5px 30px;
+    }
+}
+
 .box-lateral {
-	margin: 10px 0 0 0;
-	padding: 25px 5px 5px 30px;
-	border-left: 2px solid #e7e7e7;
+    margin: 10px 0 0 0;
+    padding: 25px 5px 5px 30px;
+    border-left: 2px solid #e7e7e7;
 }
-.projectList li{
+
+.projectList li {
     list-style: none;
+    font-size: 11px;
 }
-.projectList li a{
-    color: #555;
-    text-align: right;
+
+    .projectList li a {
+        color: #555;
+        text-align: right;
+    }
+.projetoLegend{
+    color: #000;
+    font-size: 12px;
+    margin: 0;
 }
-.projetoNameLink{
+.margin-top-5{
+    margin-top:5px;
+}
+.margin-bottom-5{
+    margin-bottom: 5px;
+}
+.projetoNameLink {
     color: #000;
 }
-.projetosShow{
+
+.projetosShow {
     height: 768px;
     padding: 10px 0;
 }
-.active-select a{
+
+.active-select a {
     font-weight: bold;
 }
-.carousel-indicators{
+
+.carousel-indicators {
 }
-.carousel-indicators li{
-    border-radius: 0px;
-}
-.carousel-indicators .active{
-    background-color: #ccff00;
-}
+
+    .carousel-indicators li {
+        border-radius: 0px;
+    }
+
+    .carousel-indicators .active {
+        background-color: #ccff00;
+    }
+
 .icon-facebook, .icon-instagram {
-	text-indent: -9999px;
-	width: 30px;
-	height: 28px;
+    text-indent: -9999px;
+    width: 30px;
+    height: 28px;
+}
+.rodape{
+    color: #3c3c3c;
+    margin: 0;
+    margin: 10px 0 -1px 0;
+}
+.rodape-social{
+    margin: 0;
+    margin: 7px 0 0 0;
+}
+.link-footer{
+    color: #3c3c3c;
+}
+.link-footer:visited, .link-footer:hover, .link-footer:link{
+    color: #3c3c3c;
 }
 .icon-instagram {
-	background-image: url('/images/icon-instagram.png')
+    background-image: url('/images/icon-instagram.png');
+    text-indent: -9999px;
 }
+
 .icon-facebook {
-	background-image: url('/images/icon-facebook.png')
+    background-image: url('/images/icon-facebook.png');
+    text-indent: -9999px;
 }
+
 figure {
-	display: inline-block;
-	margin: 5px;
+    display: inline-block;
+    margin: 5px;
 }
-figure img {
-	width: 370px;
-	height: 150px;
-}
+
+    figure img {
+        width: 370px;
+        height: 150px;
+    }
+
 .footer {
-	background-color: white;
-	border-top: 1px solid #e7e7e7;
-	bottom: 1px;
+    background-color: white;
+    border-top: 1px solid #e7e7e7;
+    bottom: 1px;
 }
 /*-- Home --*/
 .img-home {
-	padding: 5px;
+    padding: 5px;
 }
