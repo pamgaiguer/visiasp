@@ -12,7 +12,7 @@
             @foreach (var obj in Model)
             {
                 <a href="/projetos/@(obj.Projeto.CategoriaId)/projeto/@(obj.Projeto.Id)">
-                    <img src="@obj.UrlMiniatura" alt="@obj.Projeto.Nome" class="img-responsive">
+                    <img src="@obj.UrlMiniatura" alt="@obj.Projeto.Nome">
                     <div class="caption">
                         <span>@obj.Projeto.Nome</span>
                     </div>
@@ -36,8 +36,7 @@
                     margins: 1,
                     rowHeight: 365,
                     maxRowHeight: 365,
-                    fixedHeight: true,
-                    lastRow: justify
+                    fixedHeight: true
                 });
             //$("#gallery-home").justifiedGallery().on('jg.resize', function (e) {
             //    alert("resize");
