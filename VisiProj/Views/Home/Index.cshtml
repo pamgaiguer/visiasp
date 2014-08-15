@@ -6,14 +6,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div id="gallery-home">
+        <div id="gallery-home" class="col-xs-12 col-sm-6 col-md-6 col-lg-6" >
             @foreach (var obj in Model)
             {
                 <a href="/projetos/@(obj.Projeto.CategoriaId)/projeto/@(obj.Projeto.Id)">
-                    <img src="@obj.UrlMiniatura" title="@obj.Projeto.Nome">
-                    <div class="caption"></div>
+                    <img src="@obj.UrlMiniatura" alt="@obj.Projeto.Nome" class="img-responsive">
+                    <div class="caption">
+                        <span>@obj.Projeto.Nome</span>
+                    </div>
                 </a>
             }
         </div>
@@ -25,16 +27,21 @@
     <script>
         $(document).ready(function () {
             console.log("ready!");
-            $(".container").hide();
-            $(".container").fadeIn("slow");
+            $(".container-fluid").hide();
+            $(".container-fluid").fadeIn("slow");
             $("#gallery-home").justifiedGallery(
                 {
                     randomize: true,
                     captions: true,
-                    margins: 0,
+                    margins: 1,
                     rowHeight: 365,
-                    fixedHeight: true
+                    maxRowHeight: 365,
+                    fixedHeight: true,
+                    lastRow: justify
                 });
+            //$("#gallery-home").justifiedGallery().on('jg.resize', function (e) {
+            //    alert("resize");
+            //});
         });
     </script>
 }

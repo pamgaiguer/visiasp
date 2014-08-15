@@ -146,11 +146,8 @@ figure {
     }
 
 .footer {
+    height: 10px;
     background-color: white;
     border-top: 1px solid #e7e7e7;
     bottom: 1px;
-}
-/*-- Home --*/
-.img-home {
-    padding: 5px;
 }
