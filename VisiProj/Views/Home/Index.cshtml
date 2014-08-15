@@ -7,24 +7,24 @@
 }
 
 <div class="container">
-	<div class="row">
-		<div class="col-md-12">
-			@foreach (var obj in Model) {
-				<a href="/projetos/@(obj.Projeto.CategoriaId)/projeto/@(obj.Projeto.Id)"> <img src="@obj.UrlMiniatura" class='img-home'> </a>
-			}
-		</div>
-	</div>
+    <div class="row">
+        @foreach (var obj in Model)
+        {
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" id="gallery-home">
+                <a href="/projetos/@(obj.Projeto.CategoriaId)/projeto/@(obj.Projeto.Id)"><img src="@obj.UrlMiniatura"></a>
+            </div>
+        }
+    </div>
 </div>
 
-@section javascripts 
+@section javascripts
 {
-
-<script>
-    $(document).ready(function() {
-        console.log("ready!");
-        $(".container").hide();
-        $(".container").fadeIn("slow");
-    }); 
-</script>
-
+    <script>
+        $(document).ready(function () {
+            console.log("ready!");
+            $(".container").hide();
+            $(".container").fadeIn("slow");
+            $("#gallery-home").justifiedGallery({ randomize: true });
+        });
+    </script>
 }
