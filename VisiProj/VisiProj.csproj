@@ -36,7 +36,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
@@ -115,6 +115,7 @@
     <Content Include="images\logo-visi.png" />
     <Content Include="images\logo.png" />
     <Content Include="images\projetos\buffet-diversao-arte-damiana-001-mini.jpg" />
+    <Content Include="images\projetos\buffet-diversao-arte-damiana-001-mini_b.jpg" />
     <Content Include="images\projetos\buffet-diversao-arte-damiana-001.jpg" />
     <Content Include="images\projetos\buffet-diversao-arte-damiana-002-mini.jpg" />
     <Content Include="images\projetos\buffet-diversao-arte-damiana-002.jpg" />
@@ -123,6 +124,7 @@
     <Content Include="images\projetos\buffet-diversao-arte-damiana-004-mini.jpg" />
     <Content Include="images\projetos\buffet-diversao-arte-damiana-004.jpg" />
     <Content Include="images\projetos\buffet-diversao-arte-zuquim-001-mini.jpg" />
+    <Content Include="images\projetos\buffet-diversao-arte-zuquim-001-mini_b.jpg" />
     <Content Include="images\projetos\buffet-diversao-arte-zuquim-001.jpg" />
     <Content Include="images\projetos\buffet-diversao-arte-zuquim-002-mini.jpg" />
     <Content Include="images\projetos\buffet-diversao-arte-zuquim-002.jpg" />
@@ -130,7 +132,9 @@
     <Content Include="images\projetos\buffet-diversao-arte-zuquim-003.jpg" />
     <Content Include="images\projetos\buffet-diversao-arte-zuquim-004-mini.jpg" />
     <Content Include="images\projetos\buffet-diversao-arte-zuquim-004.jpg" />
+    <Content Include="images\projetos\buffet-jardim-001-mini.jpg" />
     <Content Include="images\projetos\buffet-jardim-001-mini.png" />
+    <Content Include="images\projetos\buffet-jardim-001-mini_b.jpg" />
     <Content Include="images\projetos\buffet-jardim-001.jpg" />
     <Content Include="images\projetos\buffet-jardim-002-mini.jpg" />
     <Content Include="images\projetos\buffet-jardim-002.jpg" />
@@ -139,6 +143,7 @@
     <Content Include="images\projetos\buffet-jardim-004-mini.jpg" />
     <Content Include="images\projetos\buffet-jardim-004.jpg" />
     <Content Include="images\projetos\buffet-king-kids-001-mini.jpg" />
+    <Content Include="images\projetos\buffet-king-kids-001-mini_b.jpg" />
     <Content Include="images\projetos\buffet-king-kids-001.jpg" />
     <Content Include="images\projetos\buffet-king-kids-002-mini.jpg" />
     <Content Include="images\projetos\buffet-king-kids-002.jpg" />
@@ -147,6 +152,7 @@
     <Content Include="images\projetos\buffet-king-kids-004-mini.jpg" />
     <Content Include="images\projetos\buffet-king-kids-004.jpg" />
     <Content Include="images\projetos\buffet-mega-festa-001-mini.jpg" />
+    <Content Include="images\projetos\buffet-mega-festa-001-mini_b.jpg" />
     <Content Include="images\projetos\buffet-mega-festa-001.jpg" />
     <Content Include="images\projetos\buffet-mega-festa-002-mini.jpg" />
     <Content Include="images\projetos\buffet-mega-festa-002.jpg" />
@@ -155,6 +161,7 @@
     <Content Include="images\projetos\buffet-mega-festa-004-mini.jpg" />
     <Content Include="images\projetos\buffet-mega-festa-004.jpg" />
     <Content Include="images\projetos\interior-apto74-001-mini.jpg" />
+    <Content Include="images\projetos\interior-apto74-001-mini_b.jpg" />
     <Content Include="images\projetos\interior-apto74-001.jpg" />
     <Content Include="images\projetos\interior-apto74-002-mini.jpg" />
     <Content Include="images\projetos\interior-apto74-002.jpg" />
@@ -163,6 +170,7 @@
     <Content Include="images\projetos\interior-apto74-004-mini.jpg" />
     <Content Include="images\projetos\interior-apto74-004.jpg" />
     <Content Include="images\projetos\interior-aptobellavita-001-mini.jpg" />
+    <Content Include="images\projetos\interior-aptobellavita-001-mini_b.jpg" />
     <Content Include="images\projetos\interior-aptobellavita-001.jpg" />
     <Content Include="images\projetos\interior-aptobellavita-002-mini.jpg" />
     <Content Include="images\projetos\interior-aptobellavita-002.jpg" />
@@ -173,6 +181,7 @@
     <Content Include="images\projetos\interior-aptobellavita-005-mini.jpg" />
     <Content Include="images\projetos\interior-aptobellavita-005.jpg" />
     <Content Include="images\projetos\interior-gamecompany-001-mini.jpg" />
+    <Content Include="images\projetos\interior-gamecompany-001-mini_b.jpg" />
     <Content Include="images\projetos\interior-gamecompany-001.jpg" />
     <Content Include="images\projetos\interior-gamecompany-002-mini.jpg" />
     <Content Include="images\projetos\interior-gamecompany-002.jpg" />
@@ -181,6 +190,7 @@
     <Content Include="images\projetos\interior-gamecompany-004-mini.jpg" />
     <Content Include="images\projetos\interior-gamecompany-004.jpg" />
     <Content Include="images\projetos\interior-playkidsserrinha-001-mini.jpg" />
+    <Content Include="images\projetos\interior-playkidsserrinha-001-mini_b.jpg" />
     <Content Include="images\projetos\interior-playkidsserrinha-001.jpg" />
     <Content Include="images\projetos\interior-playkidsserrinha-002-mini.jpg" />
     <Content Include="images\projetos\interior-playkidsserrinha-002.jpg" />
@@ -189,6 +199,7 @@
     <Content Include="images\projetos\interior-playkidsserrinha-004-mini.jpg" />
     <Content Include="images\projetos\interior-playkidsserrinha-004.jpg" />
     <Content Include="images\projetos\interior-thecorner-001-mini.jpg" />
+    <Content Include="images\projetos\interior-thecorner-001-mini_b.jpg" />
     <Content Include="images\projetos\interior-thecorner-001.jpg" />
     <Content Include="images\projetos\interior-thecorner-002-mini.jpg" />
     <Content Include="images\projetos\interior-thecorner-002.jpg" />
@@ -203,6 +214,7 @@
     <Content Include="images\projetos\interior-thecorner-007-mini.jpg" />
     <Content Include="images\projetos\interior-thecorner-007.jpg" />
     <Content Include="images\projetos\residencial-atibaia-001-mini.jpg" />
+    <Content Include="images\projetos\residencial-atibaia-001-mini_b.jpg" />
     <Content Include="images\projetos\residencial-atibaia-001.jpg" />
     <Content Include="images\projetos\residencial-atibaia-002-mini.jpg" />
     <Content Include="images\projetos\residencial-atibaia-002.jpg" />
@@ -211,6 +223,7 @@
     <Content Include="images\projetos\residencial-atibaia-004-mini.jpg" />
     <Content Include="images\projetos\residencial-atibaia-004.jpg" />
     <Content Include="images\projetos\residencial-burlemarx-001-mini.jpg" />
+    <Content Include="images\projetos\residencial-burlemarx-001-mini_b.jpg" />
     <Content Include="images\projetos\residencial-burlemarx-001.jpg" />
     <Content Include="images\projetos\residencial-burlemarx-002-mini.jpg" />
     <Content Include="images\projetos\residencial-burlemarx-002.jpg" />
@@ -219,10 +232,12 @@
     <Content Include="images\projetos\residencial-burlemarx-004-mini.jpg" />
     <Content Include="images\projetos\residencial-burlemarx-004.jpg" />
     <Content Include="images\projetos\residencial-feliz64-001-mini.jpg" />
+    <Content Include="images\projetos\residencial-feliz64-001-mini_b.jpg" />
     <Content Include="images\projetos\residencial-feliz64-001.jpg" />
     <Content Include="images\projetos\residencial-feliz64-002-mini.jpg" />
     <Content Include="images\projetos\residencial-feliz64-002.jpg" />
     <Content Include="images\projetos\residencial-honduras-001-mini.jpg" />
+    <Content Include="images\projetos\residencial-honduras-001-mini_b.jpg" />
     <Content Include="images\projetos\residencial-honduras-001.jpg" />
     <Content Include="images\projetos\residencial-honduras-002-mini.jpg" />
     <Content Include="images\projetos\residencial-honduras-002.jpg" />
@@ -232,13 +247,9 @@
     <Content Include="images\projetos\residencial-honduras-004.jpg" />
     <Content Include="images\projetos\residencial-honduras-005-mini.jpg" />
     <Content Include="images\projetos\residencial-honduras-005.jpg" />
-    <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
-    <Content Include="js\index.js" />
     <Content Include="js\jquery-2.1.1.min.js" />
-    <Content Include="js\jquery.hGrid.js" />
-    <Content Include="js\main.js" />
-    <Content Include="js\main2.js" />
+    <Content Include="js\justifiedgallery.js" />
     <Content Include="js\_reference.js" />
     <Content Include="favicon.ico" />
     <Content Include="Web.config" />
@@ -357,7 +368,6 @@
     <Content Include="Views\Categoria\Details.cshtml" />
     <Content Include="Views\Categoria\Edit.cshtml" />
     <Content Include="Views\Categoria\Index.cshtml" />
-    <None Include="Properties\PublishProfiles\ftp.pubxml" />
     <None Include="Properties\PublishProfiles\visiarq.com.br - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
