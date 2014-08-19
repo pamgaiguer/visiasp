@@ -95,6 +95,7 @@
     <Content Include="css\animate.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\footer.css" />
+    <Content Include="css\justifiedgallery.css" />
     <Content Include="css\main.css" />
     <Content Include="css\typografy.css" />
     <Content Include="fonts\bank_gothic_light.svg" />
