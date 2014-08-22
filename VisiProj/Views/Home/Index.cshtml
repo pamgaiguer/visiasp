@@ -6,7 +6,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <p class="text-center" style="margin-top: 60px;">Estamos em desenvolvimento...</p>
-<div class="container-fluid">
+<div class="container">
     <div class="row">
         <div id="gallery-home" class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="margin-top: 0;">
 
@@ -28,16 +28,16 @@
     <script>
         $(document).ready(function () {
             console.log("ready!");
-            $(".container-fluid").hide();
-            $(".container-fluid").fadeIn("slow");
+            $(".container").hide();
+            $(".container").fadeIn("slow");
             $("#gallery-home").justifiedGallery(
                 {
                     randomize: true,
                     captions: true,
-                    margins: 1,
-                    rowHeight: 365,
-                    maxRowHeight: 365,
-                    fixedHeight: true
+                    margins: 12,
+                    rowHeight: 335
+                    //maxRowHeight: 335,
+                    //fixedHeight: true
                 });
             //$("#gallery-home").justifiedGallery().on('jg.resize', function (e) {
             //    alert("resize");
