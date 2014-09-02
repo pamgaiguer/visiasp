@@ -6,16 +6,16 @@ $(function () {
     // Menu lateral esquerdo (Categorias)
     var $menu = $('#menuCat');
 
-    var onClickMenu = function (e) {
+    // Container de imagens
+    var $imgs = $('#photoContainer');
 
-        // Pegamos o anchor clicado e subidos um nivel para pegar o li
-        var $el = $(e.target).closest('li');
+    // Attr para buscar a categoria (Melhora o minification)
+    var dCat = 'data-categoria';
 
-        // Pega a categoria do [data-categoria]
-        var cat = $el.attr('data-categoria');
+    // Attr para buscar o proj
+    var dProj = 'data-projeto';
 
-        // Cancela acao padrao do anchor
-        e.preventDefault();
+    var ativaMenuProjetos = function (catId) {
 
         // Suma daqui :)
         $menu.find('.projectList').hide(200);
@@ -23,23 +23,94 @@ $(function () {
         // Remove todas as classes dos ul
         $menu.children('li').removeClass('active');
 
-        // Coloca a classe no li
-        $el.addClass('active');
+        // Procura a ul filha do elemento clicado pelo id (cat + numeroCat) e mostra sapreula
+        $menu.find('ul#cat' + catId).show(200);
 
-        // Procura a ul filha do elemento clicado pelo id (cat + numeroCat)
-        var itens = $menu.find('ul#cat' + cat);
+    };
 
-        // Caso itens seja vazio, nao continua a acao (Pode ser o Todos, que nao possui filhos)
-        if (itens == undefined) {
+    var ativaImagens = function (projId) {
+        
+        // Suma imagens idiotas!
+        $imgs.find('a').hide(200);
+
+        if (projId == undefined || projId == 0) {
+            $imgs.children('a').show(200);
+            
             return;
         }
 
-        // Mostra menu filho com animacao
-        itens.show(200);
+        // Acha as imagens do projeto em questao e revela
+        $imgs.find('a[' + dProj + '="' + projId + '"]').show(200);
 
     }
 
+    // Pega o item ativo e ja carrega os itens necessarios de acordo com a rota
+    var init = function () {
+
+        // Acha o menu ativo na hora da rota e pega seu catId
+        var $elCat = $menu.find('li[' + dCat + '].active');
+        var $elProj = $menu.find('li[' + dProj + '].active-select');
+        var catId = $elCat.attr(dCat);
+        var projId = $elProj.attr(dProj);
+
+        // Ativa menu
+        if (catId && catId != undefined)
+            ativaMenuProjetos(catId);
+
+        // Imagens
+        ativaImagens(projId);
+
+        $elCat.addClass('active');
+        $elProj.addClass('active-select');
+
+        $imgs.show(200);
+    };
+
+    // Clique no menu de categorias
+    var onClickCat = function (e) {
+
+        // Pegamos o anchor clicado e subidos um nivel para pegar o li
+        var $el = $(e.target).closest('li');
+
+        // Pega a categoria do [data-categoria]
+        var cat = $el.attr(dCat);
+
+        // Cancela acao padrao do anchor
+        e.preventDefault();
+
+        // Ativa menu
+        ativaMenuProjetos(cat);
+
+        // Coloca a classe no li
+        $el.addClass('active');
+
+    };
+
+    // Clique no menu de projetos
+    var onClickProj = function (e) {
+
+        // Pegamos o anchor clicado e subidos um nivel para pegar o li
+        var $el = $(e.target).closest('li');
+
+        // Pega o projetoId do [data-projeto]
+        var proj = $el.attr(dProj);
+
+        // Cancela acao padrao do anchor
+        e.preventDefault();
+
+        // Mostra imagens do projeto
+        ativaImagens(proj);
+
+        // Coloca css fresco =D
+        $el.addClass('active-select');
+
+    };
+
     // Bind de eventos
-    $menu.on('click', onClickMenu);
+    $menu.on('click', 'li[' + dCat + ']', onClickCat);
+    $menu.on('click', 'li[' + dProj + ']', onClickProj)
+
+    // Carrega o menu inicial da rota
+    init();
 
 });

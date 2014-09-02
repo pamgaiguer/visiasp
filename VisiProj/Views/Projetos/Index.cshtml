@@ -17,27 +17,26 @@
     <div class="row">
         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
             <ul id="menuCat" class="nav nav-pills nav-stacked box-lateral">
-                <li @(CatId == null || CatId == 0 ? "class=active" : "")><a href="/projetos">TODOS</a></li>
+                <li @(CatId == null || CatId == 0 ? "class=active" : "") data-categoria><a href="/projetos">TODOS</a></li>
                 @foreach (var item in Model)
                 {
                     <li @(CatId == item.Id ? "class=active" : "") data-categoria="@(item.Id)">@Html.ActionLink(item.Nome, "Index", new { catId = item.Id })</li>
-                    
+
                     //if (CatId == item.Id)
                     //{
-                        <ul id="cat@(item.Id)" class="projectList" style="display: none;">
-                            @foreach (var p in projects.Where(t => t.CategoriaId == item.Id))
-                            {
-                                <li @(ProjId == p.Id ? "class=active-select" : "")>@Html.RouteLink(p.Nome, "Projetos", new { catId = item.Id, projId = p.Id })</li>
-                            }
-                        </ul>
+                    <ul id="cat@(item.Id)" class="projectList" style="display: none;">
+                        @foreach (var p in projects.Where(t => t.CategoriaId == item.Id))
+                        {
+                            <li @(ProjId == p.Id ? "class=active-select" : "") data-projeto="@(p.Id)">@Html.RouteLink(p.Nome, "Projetos", new { catId = item.Id, projId = p.Id })</li>
+                        }
+                    </ul>
                     //}
                 }
             </ul>
         </div>
         <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
 
-            @*@if (ProjId > 0)
-            {
+            <div id="expoPhoto" style="display: none;">
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
@@ -70,20 +69,17 @@
                     </a>
                 </div>
                 <div class="projetoInfos">
-                    @{
-                VisiProj.Models.ProjetoModel proj = projects.Where(t => t.Id == ProjId).FirstOrDefault();
-                    }
-                    <h3>@proj.Nome</h3>
-                    <p>Área: <span>@proj.Area</span></p>
-                    <p>Local: <span>@proj.Local</span></p>
+                    <h3 id="projName">Nome proj</h3>
+                    <p>Área: <span id="projArea">Area</span></p>
+                    <p>Local: <span id="projLocal">Local</span></p>
                 </div>
                 <div class="clearfix"></div>
-            }
-            else
-            {
-                foreach (var foto in images)
+            </div>
+
+            <div id="photoContainer" style="display: none;">
+                @foreach (var foto in images)
                 {
-                    <a href="/projetos/@(foto.Projeto.CategoriaId)/projeto/@(foto.Projeto.Id)">
+                    <a href="/projetos/@(foto.Projeto.CategoriaId)/projeto/@(foto.Projeto.Id)" data-projeto="@(foto.Projeto.Id)">
                         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                             <img src="@foto.UrlMiniatura" class="img-responsive">
                             <div class="caption">
@@ -93,7 +89,7 @@
                         </div>
                     </a>
                 }
-            }*@
+            </div>
 
         </div>
     </div>
@@ -101,6 +97,5 @@
 
 @section javascripts {
 
-    <script src="~/js/main.js"></script>
-
+    <script src="~/js/main.min.js"></script>
 }

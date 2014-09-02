@@ -267,6 +267,9 @@
     <Content Include="js\jquery-2.1.1.min.js" />
     <Content Include="js\justifiedgallery.js" />
     <Content Include="js\main.js" />
+    <Content Include="js\main.min.js">
+      <DependentUpon>main.js</DependentUpon>
+    </Content>
     <Content Include="js\_reference.js" />
     <Content Include="favicon.ico" />
     <Content Include="Web.config" />
@@ -385,6 +388,9 @@
     <Content Include="Views\Categoria\Details.cshtml" />
     <Content Include="Views\Categoria\Edit.cshtml" />
     <Content Include="Views\Categoria\Index.cshtml" />
+    <Content Include="js\main.min.js.map">
+      <DependentUpon>main.min.js</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\visiarq.com.br - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
