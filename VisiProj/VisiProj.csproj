@@ -266,6 +266,7 @@
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery-2.1.1.min.js" />
     <Content Include="js\justifiedgallery.js" />
+    <Content Include="js\main.js" />
     <Content Include="js\_reference.js" />
     <Content Include="favicon.ico" />
     <Content Include="Web.config" />

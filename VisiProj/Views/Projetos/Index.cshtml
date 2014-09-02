@@ -16,27 +16,27 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-            <ul class="nav nav-pills nav-stacked box-lateral">
+            <ul id="menuCat" class="nav nav-pills nav-stacked box-lateral">
                 <li @(CatId == null || CatId == 0 ? "class=active" : "")><a href="/projetos">TODOS</a></li>
                 @foreach (var item in Model)
                 {
-                    <li @(CatId == item.Id ? "class=active" : "")>@Html.ActionLink(item.Nome, "Index", new { catId = item.Id })</li>
-
-                    if (CatId == item.Id)
-                    {
-                        <ul class="projectList">
-                            @foreach (var p in projects)
+                    <li @(CatId == item.Id ? "class=active" : "") data-categoria="@(item.Id)">@Html.ActionLink(item.Nome, "Index", new { catId = item.Id })</li>
+                    
+                    //if (CatId == item.Id)
+                    //{
+                        <ul id="cat@(item.Id)" class="projectList" style="display: none;">
+                            @foreach (var p in projects.Where(t => t.CategoriaId == item.Id))
                             {
                                 <li @(ProjId == p.Id ? "class=active-select" : "")>@Html.RouteLink(p.Nome, "Projetos", new { catId = item.Id, projId = p.Id })</li>
                             }
                         </ul>
-                    }
+                    //}
                 }
             </ul>
         </div>
         <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
 
-            @if (ProjId > 0)
+            @*@if (ProjId > 0)
             {
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
@@ -93,8 +93,14 @@
                         </div>
                     </a>
                 }
-            }
+            }*@
 
         </div>
     </div>
 </div>
+
+@section javascripts {
+
+    <script src="~/js/main.js"></script>
+
+}
