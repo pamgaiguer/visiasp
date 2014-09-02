@@ -24,27 +24,33 @@ namespace VisiProj.Controllers
             List<ProjetoModel> p = new List<ProjetoModel>();
             List<ImagemProjetoModel> img = new List<ImagemProjetoModel>();
 
-            if (catId != null && catId > 0)
+            p = db.Projetos.Where(proj => proj.CategoriaId > 0 && !proj.Deleted).ToList();
+            foreach (var item in p)
             {
-                p = db.Projetos.Where(proj => proj.CategoriaId == catId && !proj.Deleted).ToList();
+                img.AddRange(item.Imagens);
+            }
 
-                if (projId != null && projId > 0)
-                {
-                    img = db.Projetos.Where(proj => proj.Id == projId).FirstOrDefault().Imagens.ToList();
-                }
-                else
-                {
-                    foreach (var item in p)
-                    {
-                        img.Add(item.Imagens.First());
-                    }
-                }
-            }
-            else
-            {
-                img = db.ImagemProjetos.Where(t => t.Projeto != null && !t.Projeto.Deleted)
-                    .GroupBy(t => t.Projeto.Id, (key, g) => g.OrderBy(e => e.Id).FirstOrDefault()).ToList();
-            }
+            //if (catId != null && catId > 0)
+            //{
+            //    p = db.Projetos.Where(proj => proj.CategoriaId == catId && !proj.Deleted).ToList();
+
+            //    if (projId != null && projId > 0)
+            //    {
+            //        img = db.Projetos.Where(proj => proj.Id == projId).FirstOrDefault().Imagens.ToList();
+            //    }
+            //    else
+            //    {
+            //        foreach (var item in p)
+            //        {
+            //            img.Add(item.Imagens.First());
+            //        }
+            //    }
+            //}
+            //else
+            //{
+            //    img = db.ImagemProjetos.Where(t => t.Projeto != null && !t.Projeto.Deleted)
+            //        .GroupBy(t => t.Projeto.Id, (key, g) => g.OrderBy(e => e.Id).FirstOrDefault()).ToList();
+            //}
 
             ViewBag.CatId = catId;
             ViewBag.ProjId = projId;
