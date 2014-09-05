@@ -31,16 +31,16 @@ $(function () {
     var ativaImagens = function (projId) {
         
         // Suma imagens idiotas!
-        $imgs.find('a').hide(200);
+        $imgs.find('div[data-proj-image]').hide(200);
 
         if (projId == undefined || projId == 0) {
-            $imgs.children('a').show(200);
+            $imgs.children('div[data-proj-image]').show(200);
             
             return;
         }
 
         // Acha as imagens do projeto em questao e revela
-        $imgs.find('a[' + dProj + '="' + projId + '"]').show(200);
+        $imgs.find('div>a[' + dProj + '="' + projId + '"]').show(200);
 
     }
 
