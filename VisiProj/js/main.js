@@ -1,5 +1,5 @@
 ﻿/// <reference path="_reference.js" />
-$(function () {
+$(window).load(function () {
 
     'use strict';
 
@@ -15,7 +15,13 @@ $(function () {
     // Attr para buscar o proj
     var dProj = 'data-projeto';
 
-    var ativaMenuProjetos = function (catId) {
+    // Armazena o id da categoria
+    var catId = 0;
+
+    // Armazena o id do projeto
+    var projId = 0;
+
+    var ativaMenuProjetos = function () {
 
         // Suma daqui :)
         $menu.find('.projectList').hide(200);
@@ -28,19 +34,30 @@ $(function () {
 
     };
 
-    var ativaImagens = function (projId) {
+    var ativaImagens = function () {
         
-        // Suma imagens idiotas!
-        $imgs.find('div[data-proj-image]').hide(200);
+        // Armazena o seletor!
+        var selector = "";
 
-        if (projId == undefined || projId == 0) {
-            $imgs.children('div[data-proj-image]').show(200);
-            
-            return;
+        // Regra:
+        // Verifica se existe projeto, caso existe, com certeza existe categoria
+        // Caso nao tenha, verifia categoria
+        // Caso nao tenha, exibe todas que nao possuem atributo data-onlyshow
+        if (projId != undefined && projId > 0) {
+            selector = 'div[data-proj-image][' + dProj + '="' + projId + '"][' + dCat + '="' + catId + '"]:not([data-showonly])';
+        } else if (catId != undefined && catId > 0) {
+            selector = 'div[data-proj-image][' + dCat + '="' + catId + '"]:not([data-showonly])';
+        } else {
+            selector = "div[data-proj-image][data-showonly]";
         }
 
-        // Acha as imagens do projeto em questao e revela
-        $imgs.find('div>a[' + dProj + '="' + projId + '"]').show(200);
+        // Anima a exibicao e terminar sumindo com as desenecessarias
+        $imgs.find("div[data-proj-image]:not(" + selector + ")").each(function () {
+            $(this).hide();
+        })
+        $imgs.find(selector).each(function (i) {
+            $(this).hide().fadeIn(500 + (50 * (i+1)));
+        })
 
     }
 
@@ -50,15 +67,16 @@ $(function () {
         // Acha o menu ativo na hora da rota e pega seu catId
         var $elCat = $menu.find('li[' + dCat + '].active');
         var $elProj = $menu.find('li[' + dProj + '].active-select');
-        var catId = $elCat.attr(dCat);
-        var projId = $elProj.attr(dProj);
+
+        catId = $elCat.attr(dCat) || 0;
+        projId = $elProj.attr(dProj) || 0;
 
         // Ativa menu
         if (catId && catId != undefined)
-            ativaMenuProjetos(catId);
+            ativaMenuProjetos();
 
         // Imagens
-        ativaImagens(projId);
+        ativaImagens();
 
         $elCat.addClass('active');
         $elProj.addClass('active-select');
@@ -79,7 +97,10 @@ $(function () {
         e.preventDefault();
 
         // Ativa menu
-        ativaMenuProjetos(cat);
+        catId = cat;
+        projId = 0;
+        ativaMenuProjetos();
+        ativaImagens();
 
         // Coloca a classe no li
         $el.addClass('active');
@@ -99,7 +120,8 @@ $(function () {
         e.preventDefault();
 
         // Mostra imagens do projeto
-        ativaImagens(proj);
+        projId = proj;
+        ativaImagens();
 
         // Coloca css fresco =D
         $el.addClass('active-select');

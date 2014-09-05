@@ -17,7 +17,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
             <ul id="menuCat" class="nav nav-pills nav-stacked box-lateral">
-                <li @(CatId == null || CatId == 0 ? "class=active" : "") data-categoria><a href="/projetos">TODOS</a></li>
+                <li @(CatId == null || CatId == 0 ? "class=active" : "") data-categoria="0"><a href="/projetos">TODOS</a></li>
                 @foreach (var item in Model)
                 {
                     <li @(CatId == item.Id ? "class=active" : "") data-categoria="@(item.Id)">@Html.ActionLink(item.Nome, "Index", new { catId = item.Id })</li>
@@ -79,8 +79,12 @@
             <div id="photoContainer" style="display: none;">
                 @foreach (var foto in images)
                 {
-                    <div data-proj-image>
-                        <a href="/projetos/@(foto.Projeto.CategoriaId)/projeto/@(foto.Projeto.Id)" data-projeto="@(foto.Projeto.Id)">
+                    <div data-proj-image
+                         @(foto.UrlMiniatura.ToLower().Contains("001-mini") ? "data-showonly" : "")
+                         data-categoria="@(foto.Projeto.CategoriaId)"
+                         data-projeto="@(foto.Projeto.Id)"
+                         style="display: none;">
+                        <a href="/projetos/@(foto.Projeto.CategoriaId)/projeto/@(foto.Projeto.Id)">
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <img src="@foto.UrlMiniatura" class="img-responsive">
                                 <div class="caption">
