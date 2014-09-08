@@ -37,7 +37,50 @@
         <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
 
             <div id="expoPhoto" style="display: none;">
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                @foreach (var p in projects)
+                {
+                    <div data-showcase="@(p.Id)" style="display: none;">
+                        <div id="show@(p.Id)" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                @{int countSlide = 0;}
+                                @foreach (var foto in p.Imagens.ToList())
+                                {
+                                    <li data-target="#show@(p.Id)" data-slide-to="@(countSlide)" @(countSlide == 0 ? "class=active" : "")></li>
+                                    countSlide++;
+                                }
+                            </ol>
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+                                @{countSlide = 0;}
+                                @foreach (var foto in p.Imagens.ToList())
+                                {
+                                    <div class="item @(countSlide == 0 ? "active" : "")">
+                                        <img src="@foto.UrlNormal" alt="@foto.Projeto.Nome">
+                                    </div>
+                                    countSlide++;
+                                }
+
+                            </div>
+                            <!-- Controls -->
+                            <a class="left carousel-control" href="#show@(p.Id)" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#show@(p.Id)" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                        <div id="projetoInfos" class="projetoInfos">
+                            <h3 id="projName">@(p.Nome)</h3>
+                            <p>Área: <span id="projArea">@(p.Area)</span></p>
+                            <p>Local: <span id="projLocal">@(p.Local)</span></p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                }
+
+                @*<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
                         @{int countSlide = 0;}
@@ -68,12 +111,12 @@
                         <span class="glyphicon glyphicon-chevron-right"></span>
                     </a>
                 </div>
-                <div class="projetoInfos">
+                <div id="projetoInfos" class="projetoInfos">
                     <h3 id="projName">Nome proj</h3>
                     <p>Área: <span id="projArea">Area</span></p>
                     <p>Local: <span id="projLocal">Local</span></p>
                 </div>
-                <div class="clearfix"></div>
+                <div class="clearfix"></div>*@
             </div>
 
             <div id="photoContainer" style="display: none;">
@@ -84,7 +127,7 @@
                          data-categoria="@(foto.Projeto.CategoriaId)"
                          data-projeto="@(foto.Projeto.Id)"
                          style="display: none;">
-                        <a href="/projetos/@(foto.Projeto.CategoriaId)/projeto/@(foto.Projeto.Id)">
+                        <a href="#">
                             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                                 <img src="@foto.UrlMiniatura" class="img-responsive">
                                 <div class="caption">

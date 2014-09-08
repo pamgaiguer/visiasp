@@ -9,11 +9,17 @@ $(window).load(function () {
     // Container de imagens
     var $imgs = $('#photoContainer');
 
+    // Show case dos projetos (Carousel)
+    var $expo = $('#expoPhoto');
+
     // Attr para buscar a categoria (Melhora o minification)
     var dCat = 'data-categoria';
 
     // Attr para buscar o proj
     var dProj = 'data-projeto';
+
+    // Attr para buscar showcase
+    var dShow = 'data-showcase';
 
     // Armazena o id da categoria
     var catId = 0;
@@ -96,6 +102,10 @@ $(window).load(function () {
         // Cancela acao padrao do anchor
         e.preventDefault();
 
+        // Retira show case caso tenha
+        $expo.hide();
+        $imgs.show();
+
         // Ativa menu
         catId = cat;
         projId = 0;
@@ -119,18 +129,48 @@ $(window).load(function () {
         // Cancela acao padrao do anchor
         e.preventDefault();
 
+        // Retira show case caso tenha
+        $expo.hide();
+        $imgs.show();
+
         // Mostra imagens do projeto
         projId = proj;
         ativaImagens();
 
         // Coloca css fresco =D
+        // Remove todas as classes dos li
+        $menu.find('li.active-select').removeClass('active-select');
         $el.addClass('active-select');
 
     };
 
+    // Clique para showcase
+    var onShowCase = function (e) {
+        // Pegamos o anchor clicado e subidos um nivel para pegar a div
+        var $el = $(e.target).closest('div[data-proj-image]');
+        projId = $el.attr(dProj);
+        catId = $el.attr(dCat);
+
+        // Cancela acao padrao do anchor
+        e.preventDefault();
+
+        // Ativa o menu
+        ativaMenuProjetos();
+        $menu.find('li.active-select').removeClass('active-select');
+        $menu.find('li[' + dCat + '="' + catId + '"]').addClass('active');
+        $menu.find('li[' + dProj + '="' + projId + '"]').addClass('active-select');
+
+        // Esconde as imagens para mostrar o showcase
+        $imgs.hide();
+        $expo.find('div[' + dShow + ']').hide();
+        $expo.find('div[' + dShow + '="' + projId + '"]').show();
+        $expo.show();
+    }
+
     // Bind de eventos
     $menu.on('click', 'li[' + dCat + ']', onClickCat);
-    $menu.on('click', 'li[' + dProj + ']', onClickProj)
+    $menu.on('click', 'li[' + dProj + ']', onClickProj);
+    $imgs.on('click', 'a', onShowCase);
 
     // Carrega o menu inicial da rota
     init();
