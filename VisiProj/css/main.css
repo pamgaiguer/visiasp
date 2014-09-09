@@ -22,7 +22,10 @@ body {
 }
 
 .navbar-nav > li {
-    margin: 5px 30px;
+    margin: 5px 30px 5px 30px;
+}
+.navbar-nav > li:last-child{
+    margin-right: 0px;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -159,9 +162,8 @@ body {
 
 .rodape-social {
     margin: 0;
-    margin: 7px 0 0 0;
+    margin: 10px -15px 0 0;
 }
-
 .link-footer {
     color: #3c3c3c;
 }
