@@ -16,6 +16,7 @@ namespace VisiProj.Models
         public string Nome { get; set; }
         public string Local { get; set; }
         public string Area { get; set; }
+        public string Data { get; set; }
         public virtual ICollection<ImagemProjetoModel> Imagens { get; set; }
         public bool Deleted { get; set; }
     }
