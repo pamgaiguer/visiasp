@@ -115,6 +115,12 @@ body {
     font-size: 12px;
     margin: 0;
 }
+.projectsThumb{
+    /*border:1px solid orange;*/
+    height:200px;
+    margin: 0px 0px 0px 0px;
+    padding: 3px;
+}
 
 .margin-top-5 {
     margin-top: 5px;
