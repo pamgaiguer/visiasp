@@ -20,6 +20,7 @@
                     <th>@Html.DisplayNameFor(model => model.Local)</th>
                     <th>@Html.DisplayNameFor(model => model.Area)</th>
                     <th>@Html.DisplayNameFor(model => model.Data)</th>
+                    <th>@Html.DisplayNameFor(model => model.Categoria)</th>
                     <th>Imagens</th>
                     <th></th>
                 </tr>
@@ -32,6 +33,7 @@
                         <td>@Html.DisplayFor(modelItem => item.Local)</td>
                         <td>@Html.DisplayFor(modelItem => item.Area)</td>
                         <td>@Html.DisplayFor(modelItem => item.Data)</td>
+                        <th>@Html.DisplayFor(modelItem => item.Categoria.Nome)</th>
                         <td>@item.Imagens.Count</td>
                         <td>
                             @Html.ActionLink("Imagens", "Index", "ImagemProjeto", new { id = item.Id }, null) |
