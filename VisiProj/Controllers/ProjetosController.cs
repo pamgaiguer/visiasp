@@ -20,7 +20,7 @@ namespace VisiProj.Controllers
         /// <returns>Html page with projects</returns>
         public ActionResult Index(int? catId, int? projId)
         {
-            List<CategoriaModel> cats = db.Categorias.ToList();
+            List<CategoriaModel> cats = db.Categorias.OrderBy(t => t.Nome).ToList();
             List<ProjetoModel> p = new List<ProjetoModel>();
             List<ImagemProjetoModel> img = new List<ImagemProjetoModel>();
 
