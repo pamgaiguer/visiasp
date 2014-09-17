@@ -3,7 +3,6 @@ body {
     background-color: rgba(255,255,255,0.9);
     font-family: 'Gotham-Book', 'Arial', sans-serif;
 }
-
 .logo {
     text-indent: -9999px;
     width: 196px;
@@ -12,33 +11,27 @@ body {
     margin-top: 5px;
     margin-bottom: 5px;
 }
-
 .navbar-default {
     background-color: white;
 }
-
 .navbar-brand {
     padding: 15px 0px 0px 0px;
 }
-
 .navbar-nav > li {
     margin: 5px 30px 5px 30px;
 }
 .navbar-nav > li:last-child{
     margin-right: 0px;
 }
-
 .navbar-default .navbar-nav > li > a {
     color: #3c3c3c;
 }
-
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
     color: #3c3c3c;
     background-color: transparent;
     border-bottom: 2px solid #CCFF00;
     padding-bottom: 0;
 }
-
 .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
     color: #3c3c3c;
     background-color: transparent;
@@ -53,41 +46,31 @@ body {
     color: #000;
     margin-bottom: 8px;
 }
-
-
-
 .nav > li > a {
     color: #555;
 }
-
-    .nav > li > a:hover, .nav > li > a:focus {
-        background-color: transparent;
-        color: #000;
-    }
-
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color: transparent;
+    color: #000;
+}
 .nav > li > a {
     padding: 10px 0 10px 0;
 }
-
 .nav-stacked > li + li {
     margin-top: 0px;
 }
-
 @media (max-width: 768px) {
     .navbar-nav > li {
         /*margin: 5px 30px;*/
     }
-
     .navbar-nav.navbar-right:last-child {
         margin-right: -31px;
     }
-
     .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
         color: #3c3c3c;
         background-color: transparent;
         border-bottom: 2px solid #CCFF00;
     }
-
     .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
         color: #3c3c3c;
         background-color: transparent;
@@ -114,20 +97,17 @@ body {
     font-size: 60px;
     font-weight:lighter;
     padding-left: 0;
-    margin-left: -15px;
-    margin-top: -70px;
-    
+    margin-left: -20px;
+    margin-top: -70px;    
 }
 .projectList li {
     list-style: none;
     font-size: 11px;
 }
-
-    .projectList li a {
-        color: #555;
-        text-align: right;
-    }
-
+.projectList li a {
+    color: #555;
+    text-align: right;
+}
 .projetoLegend {
     color: #000;
     font-size: 12px;
@@ -138,51 +118,40 @@ body {
     margin: 0px 0px 0px 0px;
     padding: 3px;
 }
-
 .margin-top-5 {
     margin-top: 5px;
 }
-
 .margin-bottom-5 {
     margin-bottom: 5px;
 }
-
 .projetoNameLink {
     color: #000;
 }
-
 .projetosShow {
     height: 768px;
     padding: 10px 0;
 }
-
 .active-select a {
     font-weight: bold;
 }
-
 .carousel-indicators {
 }
-
-    .carousel-indicators li {
-        border-radius: 0px;
-    }
-
-    .carousel-indicators .active {
-        background-color: #ccff00;
-    }
-
+.carousel-indicators li {
+    border-radius: 0px;
+}
+.carousel-indicators .active {
+    background-color: #ccff00;
+}
 .icon-facebook, .icon-instagram {
     text-indent: -9999px;
     width: 30px;
     height: 28px;
 }
-
 .rodape {
     color: #3c3c3c;
     margin: 0;
     margin: 10px 0 -1px -15px;
 }
-
 .rodape-social {
     margin: 0;
     margin: 10px -15px 0 0;
@@ -190,31 +159,25 @@ body {
 .link-footer {
     color: #3c3c3c;
 }
-
-    .link-footer:visited, .link-footer:hover, .link-footer:link {
-        color: #3c3c3c;
-    }
-
+.link-footer:visited, .link-footer:hover, .link-footer:link {
+    color: #3c3c3c;
+}
 .icon-instagram {
     background-image: url('/images/icon-instagram.png');
     text-indent: -9999px;
 }
-
 .icon-facebook {
     background-image: url('/images/icon-facebook.png');
     text-indent: -9999px;
 }
-
 figure {
     display: inline-block;
     margin: 5px;
 }
-
-    figure img {
-        width: 370px;
-        height: 150px;
-    }
-
+figure img {
+    width: 370px;
+    height: 150px;
+}
 .footer {
     height: 10px;
     background-color: white;
