@@ -20,16 +20,16 @@
                 <li @(CatId == null || CatId == 0 ? "class=active" : "") data-categoria="0"><a href="/projetos">TODOS</a></li>
                 @foreach (var item in Model)
                 {
-                    <li @(CatId == item.Id ? "class=active" : "") data-categoria="@(item.Id)">@Html.ActionLink(item.Nome, "Index", new { catId = item.Id })</li>
+                <li @(CatId == item.Id ? "class=active" : "") data-categoria="@(item.Id)">@Html.ActionLink(item.Nome, "Index", new { catId = item.Id })</li>
 
                     //if (CatId == item.Id)
                     //{
-                    <ul id="cat@(item.Id)" class="projectList" style="display: none;">
-                        @foreach (var p in projects.Where(t => t.CategoriaId == item.Id))
+                <ul id="cat@(item.Id)" class="projectList" style="display: none;">
+                    @foreach (var p in projects.Where(t => t.CategoriaId == item.Id))
                         {
-                            <li @(ProjId == p.Id ? "class=active-select" : "") data-categoria="@(item.Id)" data-projeto="@(p.Id)">@Html.RouteLink(p.Nome, "Projetos", new { catId = item.Id, projId = p.Id }, new { data_showcase="", data_menu="" })</li>
+                        <li @(ProjId == p.Id ? "class=active-select" : "") data-categoria="@(item.Id)" data-projeto="@(p.Id)">@Html.RouteLink(p.Nome, "Projetos", new { catId = item.Id, projId = p.Id }, new { data_showcase="", data_menu="" })</li>
                         }
-                    </ul>
+                </ul>
                     //}
                 }
             </ul>
@@ -56,11 +56,10 @@
                                 @foreach (var foto in p.Imagens.ToList())
                                 {
                                     <div class="item @(countSlide == 0 ? "active" : "")">
-                                        <img src="@foto.UrlNormal" alt="@foto.Projeto.Nome">
+                                        <img src="@foto.UrlNormal" alt="@foto.Projeto.Nome" class="center-block">
                                     </div>
                                     countSlide++;
                                 }
-
                             </div>
                             <!-- Controls -->
                             <a class="left carousel-control" href="#show@(p.Id)" role="button" data-slide="prev">
@@ -70,11 +69,15 @@
                                 <span class="glyphicon glyphicon-chevron-right"></span>
                             </a>
                         </div>
-                        <div id="projetoInfos" class="projetoInfos">
-                            <h3 id="projName">@(p.Nome)</h3>
-                            <p>Área: <span id="projArea">@(p.Area)</span></p>
-                            <p>Local: <span id="projLocal">@(p.Local)</span></p>
-                            <p>Data: <span id="projData">@(p.Data)</span></p>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                <div id="projetoInfos" class="projetoInfos">
+                                    <h3 id="projName">@(p.Nome)</h3>
+                                    <p>Área: <span id="projArea">@(p.Area)</span></p>
+                                    <p>Local: <span id="projLocal">@(p.Local)</span></p>
+                                    <p>Data: <span id="projData">@(p.Data)</span></p>
+                                </div>
+                            </div>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -107,6 +110,5 @@
 </div>
 
 @section javascripts {
-
     <script src="~/js/main.min.js"></script>
 }

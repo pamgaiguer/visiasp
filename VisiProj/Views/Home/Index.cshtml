@@ -8,10 +8,9 @@
 <div class="container">
     <div class="row">
         <div id="gallery-home" class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="margin-top: 0; padding-left:0; padding-right:0;">
-
             @foreach (var obj in Model)
             {
-                <a href="/projetos/@(obj.Projeto.CategoriaId)/projeto/@(obj.Projeto.Id)">
+                <a href="/projetos/@(obj.Projeto.CategoriaId)/projeto/@(obj.Projeto.Id)" target="_self">
                     <img src="@obj.UrlNormal" alt="@obj.Projeto.Nome">
                     <div class="caption">
                         <span>@obj.Projeto.Nome</span>
