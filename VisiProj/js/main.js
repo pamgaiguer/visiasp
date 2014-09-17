@@ -52,12 +52,12 @@ $(window).load(function () {
         if (projId != undefined && projId > 0) {
             selector = 'div[data-proj-image][' + dProj + '="' + projId + '"][' + dCat + '="' + catId + '"]:not([data-showonly])';
         } else if (catId != undefined && catId > 0) {
-            selector = 'div[data-proj-image][' + dCat + '="' + catId + '"]:not([data-showonly])';
+            selector = 'div[data-proj-image][' + dCat + '="' + catId + '"][data-showonly]';
         } else {
             selector = "div[data-proj-image][data-showonly]";
         }
 
-        // Anima a exibicao e terminar sumindo com as desenecessarias
+        // Anima a exibicao e terminar sumindo com as desnecessarias
         $imgs.find("div[data-proj-image]:not(" + selector + ")").each(function () {
             $(this).hide();
         })
@@ -94,7 +94,12 @@ $(window).load(function () {
     var onClickCat = function (e) {
 
         // Pegamos o anchor clicado e subidos um nivel para pegar o li
-        var $el = $(e.target).closest('li');
+        var $el = $(e.target)
+
+        if ($el.attr("data-showcase") != undefined)
+            return onShowCase(e);
+
+        $el = $el.closest('li');
 
         // Pega a categoria do [data-categoria]
         var cat = $el.attr(dCat);
@@ -118,36 +123,37 @@ $(window).load(function () {
     };
 
     // Clique no menu de projetos
-    var onClickProj = function (e) {
+    //var onClickProj = function (e) {
 
-        // Pegamos o anchor clicado e subidos um nivel para pegar o li
-        var $el = $(e.target).closest('li');
+    //    // Pegamos o anchor clicado e subidos um nivel para pegar o li
+    //    var $el = $(e.target).closest('li');
 
-        // Pega o projetoId do [data-projeto]
-        var proj = $el.attr(dProj);
+    //    // Pega o projetoId do [data-projeto]
+    //    var proj = $el.attr(dProj);
 
-        // Cancela acao padrao do anchor
-        e.preventDefault();
+    //    // Cancela acao padrao do anchor
+    //    e.preventDefault();
 
-        // Retira show case caso tenha
-        $expo.hide();
-        $imgs.show();
+    //    // Retira show case caso tenha
+    //    $expo.hide();
+    //    $imgs.show();
 
-        // Mostra imagens do projeto
-        projId = proj;
-        ativaImagens();
+    //    // Mostra imagens do projeto
+    //    projId = proj;
+    //    ativaImagens();
 
-        // Coloca css fresco =D
-        // Remove todas as classes dos li
-        $menu.find('li.active-select').removeClass('active-select');
-        $el.addClass('active-select');
+    //    // Coloca css fresco =D
+    //    // Remove todas as classes dos li
+    //    $menu.find('li.active-select').removeClass('active-select');
+    //    $el.addClass('active-select');
 
-    };
+    //};
 
     // Clique para showcase
     var onShowCase = function (e) {
         // Pegamos o anchor clicado e subidos um nivel para pegar a div
-        var $el = $(e.target).closest('div[data-proj-image]');
+        var $el = $(e.target);
+        $el = $el.attr("data-menu") == undefined ? $el.closest('div[data-proj-image]') : $el.closest('li');
         projId = $el.attr(dProj);
         catId = $el.attr(dCat);
 
@@ -168,9 +174,9 @@ $(window).load(function () {
     }
 
     // Bind de eventos
+    $imgs.on('click', 'a[data-showcase]', onShowCase);
     $menu.on('click', 'li[' + dCat + ']', onClickCat);
-    $menu.on('click', 'li[' + dProj + ']', onClickProj);
-    $imgs.on('click', 'a', onShowCase);
+    //$menu.on('click', 'li[' + dProj + ']', onShowCase);
 
     // Carrega o menu inicial da rota
     init();
