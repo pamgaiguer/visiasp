@@ -15,7 +15,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 menuLateral">
             <ul id="menuCat" class="nav nav-pills nav-stacked box-lateral">
                 <li @(CatId == null || CatId == 0 ? "class=active" : "") data-categoria="0"><a href="/projetos">TODOS</a></li>
                 @foreach (var item in Model)
@@ -34,8 +34,7 @@
                 }
             </ul>
         </div>
-        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-
+        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 showPhotos">
             <div id="expoPhoto" style="display: none;">
                 @foreach (var p in projects)
                 {
@@ -124,7 +123,7 @@
                 @foreach (var foto in images)
                 {
                     <div data-proj-image
-                         @(foto.UrlMiniatura.ToLower().Contains("001-mini") ? "data-showonly" : "")
+                         @(foto.UrlMiniatura.Contains("001-mini") ? "data-showonly" : "")
                          data-categoria="@(foto.Projeto.CategoriaId)"
                          data-projeto="@(foto.Projeto.Id)"
                          style="display: none;">

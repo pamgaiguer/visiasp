@@ -94,7 +94,12 @@ body {
         border-bottom: 2px solid #CCFF00;
     }
 }
-
+.menuLateral{
+    padding-left:0;
+}
+.showPhotos{
+    padding-right:0;
+}
 .box-lateral {
     padding: 0px 0px 0px 30px;
     border-left: 2px solid #e7e7e7;
@@ -116,8 +121,7 @@ body {
     margin: 0;
 }
 .projectsThumb{
-    /*border:1px solid orange;*/
-    height:200px;
+    height:250px;
     margin: 0px 0px 0px 0px;
     padding: 3px;
 }
