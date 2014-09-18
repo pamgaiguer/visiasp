@@ -87,7 +87,11 @@ $(window).load(function () {
         $elCat.addClass('active');
         $elProj.addClass('active-select');
 
-        $imgs.show(200);
+        if (projId && projId != undefined) {
+            $elProj.children("a").click();
+        } else {
+            $imgs.show(200);
+        }
     };
 
     // Clique no menu de categorias
