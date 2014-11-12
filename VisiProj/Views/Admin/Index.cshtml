@@ -5,14 +5,14 @@
 }
 <div class="container">
     <div class="row">
-        <h2>Cadastrar projetos</h2>
+        <h2>Projetos - Visualização Geral</h2>
         <ol class="breadcrumb">
             Você está em:
             <li>Projetos</li>
             <li class="active">Home</li>
         </ol>
-        @Html.ActionLink("Criar novo", "Create", null, new { @class = "btn btn-default" })
-        <br />
+        @Html.ActionLink("Criar novo", "Create", null, new { @class = "btn btn-primary" })
+        <br /><br />
         <table class="table table-condensed">
             <thead>
                 <tr>
@@ -21,7 +21,7 @@
                     <th>@Html.DisplayNameFor(model => model.Area)</th>
                     <th>@Html.DisplayNameFor(model => model.Data)</th>
                     <th>@Html.DisplayNameFor(model => model.Categoria)</th>
-                    <th>Imagens</th>
+                    <th class="text-center">Imagens</th>
                     <th></th>
                 </tr>
             </thead>
@@ -34,12 +34,12 @@
                         <td>@Html.DisplayFor(modelItem => item.Area)</td>
                         <td>@Html.DisplayFor(modelItem => item.Data)</td>
                         <th>@Html.DisplayFor(modelItem => item.Categoria.Nome)</th>
-                        <td>@item.Imagens.Count</td>
+                        <td class="text-center">@item.Imagens.Count</td>
                         <td>
-                            @Html.ActionLink("Imagens", "Index", "ImagemProjeto", new { id = item.Id }, null) |
-                            @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
-                            @Html.ActionLink("Detalhes", "Details", new { id = item.Id }) |
-                            @Html.ActionLink("Excluir", "Delete", new { id = item.Id })
+                            @Html.ActionLink("Imagens", "Index", "ImagemProjeto", new { id = item.Id }, new { @class = "btn btn-primary" })
+                            @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-warning" })
+                            @Html.ActionLink("Detalhes", "Details", new { id = item.Id }, new { @class = "btn btn-info" })
+                            @Html.ActionLink("Excluir", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
                         </td>
                     </tr>
                 }

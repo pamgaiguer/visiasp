@@ -5,7 +5,7 @@
 }
 <div class="container">
     <div class="row">
-        <h2>Inserir novo projeto</h2>
+        <h2>Projetos - Novo</h2>
         <ol class="breadcrumb">
             Você está em:
             <li><a href="/Admin/Index/">Projetos</a></li>
@@ -16,7 +16,6 @@
             @Html.AntiForgeryToken()
 
             <div class="form-horizontal">
-                <h4>Novo projeto</h4>
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="form-group">
@@ -67,7 +66,7 @@
         }
 
         <div>
-            @Html.ActionLink("Voltar a lista de projetos", "Index")
+            @Html.ActionLink("Voltar a lista de projetos", "Index", null, new { @class="btn btn-primary"})
         </div>
     </div>
 </div>

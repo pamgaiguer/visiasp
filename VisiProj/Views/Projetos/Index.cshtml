@@ -20,19 +20,30 @@
                 <li @(CatId == null || CatId == 0 ? "class=active" : "") data-categoria="0"><a href="/projetos">TODOS</a></li>
                 @foreach (var item in Model)
                 {
-                <li @(CatId == item.Id ? "class=active" : "") data-categoria="@(item.Id)">@Html.ActionLink(item.Nome, "Index", new { catId = item.Id })</li>
+                    <li @(CatId == item.Id ? "class=active" : "") data-categoria="@(item.Id)">@Html.ActionLink(item.Nome, "Index", new { catId = item.Id })</li>
 
                     //if (CatId == item.Id)
                     //{
-                <ul id="cat@(item.Id)" class="projectList" style="display: none;">
-                    @foreach (var p in projects.Where(t => t.CategoriaId == item.Id))
+                    <ul id="cat@(item.Id)" class="projectList" style="display: none;">
+                        @foreach (var p in projects.Where(t => t.CategoriaId == item.Id))
                         {
-                        <li @(ProjId == p.Id ? "class=active-select" : "") data-categoria="@(item.Id)" data-projeto="@(p.Id)">@Html.RouteLink(p.Nome, "Projetos", new { catId = item.Id, projId = p.Id }, new { data_showcase="", data_menu="" })</li>
+                            <li @(ProjId == p.Id ? "class=active-select" : "") data-categoria="@(item.Id)" data-projeto="@(p.Id)">@Html.RouteLink(p.Nome, "Projetos", new { catId = item.Id, projId = p.Id }, new { data_showcase = "", data_menu = "" })</li>
                         }
-                </ul>
+                    </ul>
                     //}
                 }
             </ul>
+            <hr />
+            @*@foreach (var d in projects)
+            {
+                <div id="@(d.Id)" class="projetoInfos">
+                    <h3 id="projName">@(d.Nome)</h3>
+                    <p>Área: <span id="projArea">@(d.Area)</span></p>
+                    <p>Local: <span id="projLocal">@(d.Local)</span></p>
+                    <p>Data: <span id="projData">@(d.Data)</span></p>
+                </div>
+                <hr />
+            }*@
         </div>
         <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 showPhotos">
             <div id="expoPhoto" style="display: none;">

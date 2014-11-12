@@ -5,14 +5,13 @@
 }
 <div class="container">
     <div class="row">
-        <h2>Detalhes do projeto</h2>
+        <h2>Projetos - Detalhes</h2>
         <ol class="breadcrumb">
             Você está em:
             <li><a href="/Admin/Index/">Projetos</a></li>
             <li class="active">Detalhes do projeto</li>
         </ol>
         <div>
-            <h4>Detalhes do projeto</h4>
             <hr />
             <dl class="dl-horizontal">
                 <dt>@Html.DisplayNameFor(model => model.Nome)</dt>
@@ -27,8 +26,8 @@
         </div>
         <br />
         <p>
-            @Html.ActionLink("Editar projeto", "Edit", new { id = Model.Id }, new { @class = "btn btn-default" })
-            @Html.ActionLink("Voltar a lista de projetos", "Index", null, new { @class = "btn btn-default" })
+            @Html.ActionLink("Editar projeto", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning" })
+            @Html.ActionLink("Voltar a lista de projetos", "Index", null, new { @class = "btn btn-primary" })
         </p>
     </div>
 
