@@ -1,11 +1,11 @@
 ﻿@model VisiProj.Models.ImagemProjetoModel
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Imagens do Projeto | Editar";
 }
 <div class="container">
     <div class="row">
-        <h2>Editar</h2>
+        <h2>Imagens do Projeto | Editar</h2>
         <ol class="breadcrumb">
             Você está em:
             <li><a href="/ImagemProjeto/Index">Imagens dos projetos</a></li>
@@ -16,7 +16,7 @@
             @Html.AntiForgeryToken()
 
             <div class="form-horizontal">
-                <h4>ImagemProjetoModel</h4>
+                <h4>Editar imagens para o projeto <strong class="text-info">@Html.DisplayFor(model => Model.Projeto.Nome)</strong></h4>
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 @Html.HiddenFor(model => model.Id)
@@ -40,14 +40,14 @@
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Cadastrar" class="btn btn-default" />
+                        <input type="submit" value="Cadastrar" class="btn btn-primary" />
                     </div>
                 </div>
             </div>
         }
 
         <div>
-            @Html.ActionLink("Voltar para a lista", "Index", new { id = Model.Projeto.Id })
+            @Html.ActionLink("Voltar para a lista", "Index", new { id = Model.Projeto.Id }, new { @class ="btn btn-primary"})
         </div>
     </div>
 </div>
