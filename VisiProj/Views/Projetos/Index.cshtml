@@ -50,7 +50,7 @@
                 @foreach (var p in projects)
                 {
                     <div data-showcase="@(p.Id)" style="display: none;">
-                        <div id="show@(p.Id)" class="carousel slide" data-ride="carousel">
+                        <div id="show@(p.Id)" class="carousel slide" data-ride="carousel" data-interval="false">
                             <!-- Indicators -->
                             <ol class="carousel-indicators">
                                 @{int countSlide = 0;}
