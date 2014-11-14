@@ -243,6 +243,10 @@
     <Content Include="images\projetos\comercial-thecorner-006.jpg" />
     <Content Include="images\projetos\comercial-thecorner-007-mini.jpg" />
     <Content Include="images\projetos\comercial-thecorner-007.jpg" />
+    <Content Include="images\projetos\comercial\conjuntocomercial-riobranco-001-mini.jpg" />
+    <Content Include="images\projetos\comercial\conjuntocomercial-riobranco-001.jpg" />
+    <Content Include="images\projetos\comercial\conjuntocomercial-riobranco-002.jpg" />
+    <Content Include="images\projetos\comercial\conjuntocomercial-riobranco-003.jpg" />
     <Content Include="images\projetos\industrial-galpaoraposo-001-mini.jpg" />
     <Content Include="images\projetos\industrial-galpaoraposo-001.jpg" />
     <Content Include="images\projetos\industrial-galpaoraposo-001_b.jpg" />
@@ -339,6 +343,16 @@
     <Content Include="images\projetos\residencial-honduras-004.jpg" />
     <Content Include="images\projetos\residencial-honduras-005-mini.jpg" />
     <Content Include="images\projetos\residencial-honduras-005.jpg" />
+    <Content Include="images\projetos\residencial\residencia-diniz-001-mini.jpg" />
+    <Content Include="images\projetos\residencial\residencia-diniz-001.jpg" />
+    <Content Include="images\projetos\residencial\residencia-diniz-002.jpg" />
+    <Content Include="images\projetos\residencial\residencia-diniz-003.jpg" />
+    <Content Include="images\projetos\residencial\residencia-diniz-004.jpg" />
+    <Content Include="images\projetos\residencial\residencia-diniz-005.jpg" />
+    <Content Include="images\projetos\residencial\residencia-diniz-006.jpg" />
+    <Content Include="images\projetos\residencial\residencia-diniz-007.jpg" />
+    <Content Include="images\projetos\residencial\residencia-diniz-008.jpg" />
+    <Content Include="images\projetos\residencial\residencia-diniz-009.jpg" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\jquery-2.1.1.min.js" />
     <Content Include="js\justifiedgallery.js" />
