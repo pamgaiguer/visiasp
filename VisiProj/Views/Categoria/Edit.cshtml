@@ -5,17 +5,15 @@
 }
 <div class="container">
     <div class="row">
-        <h2>Editar categoria</h2>
+        <h2>Categorias - Edição</h2>
         <ol class="breadcrumb">
             Você está em:
-            <li><a href="#">Categoria</a></li>
+            <li><a href="/Categoria/Index">Categoria</a></li>
             <li class="active">Editar categoria</li>
         </ol>
-
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
-
             <div class="form-horizontal">
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -31,14 +29,14 @@
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Cadastrar" class="btn btn-default" />
+                        <input type="submit" value="Atualizar" class="btn btn-default" />
                     </div>
                 </div>
             </div>
         }
 
         <div>
-            @Html.ActionLink("Voltar a lista de categorias", "Index")
+            @Html.ActionLink("Voltar a lista de categorias", "Index", null, new {@class="btn btn-primary" })
         </div>
     </div>
 </div>

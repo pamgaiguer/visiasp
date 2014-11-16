@@ -8,10 +8,11 @@
         <h2>Projetos - Visualização Geral</h2>
         <ol class="breadcrumb">
             Você está em:
-            <li>Projetos</li>
+            <li><a href="/Admin/Index">Projetos</a></li>
             <li class="active">Home</li>
         </ol>
-        @Html.ActionLink("Criar novo", "Create", null, new { @class = "btn btn-primary" })
+        @Html.ActionLink("Criar novo projeto", "Create", null, new { @class = "btn btn-primary" })
+        @Html.ActionLink("Criar nova categoria", "../Categoria/Index", null, new { @class="btn btn-primary" })
         <br /><br />
         <table class="table table-condensed">
             <thead>
@@ -22,7 +23,7 @@
                     <th>@Html.DisplayNameFor(model => model.Data)</th>
                     <th>@Html.DisplayNameFor(model => model.Categoria)</th>
                     <th class="text-center">Imagens</th>
-                    <th></th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>

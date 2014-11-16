@@ -5,13 +5,15 @@
 }
 <div class="container">
     <div class="row">
-        <h2>Apagar categoria</h2>
+        <h2>Categorias - Exclusão</h2>
         <ol class="breadcrumb">
             Você está em:
-            <li><a href="#">Categoria</a></li>
+            <li><a href="/Categoria/Index">Categoria</a></li>
             <li class="active">Excluir categoria</li>
         </ol>
-        <h4>Tem certeza que deseja excluir esta categoria?</h4>
+        <div class="alert bg-danger text-center">
+            <p>Tem certeza que deseja apagar esta categoria?</p>
+        </div>
         <hr />
         <dl class="dl-horizontal">
             <dt>@Html.DisplayNameFor(model => model.Nome)</dt>
@@ -23,8 +25,8 @@
             @Html.AntiForgeryToken()
 
             <div class="form-actions no-color">
-                <input type="submit" value="Excluir" class="btn btn-link"> |
-                @Html.ActionLink("Voltar a lista de categorias", "Index")
+                <input type="submit" value="Excluir" class="btn btn-danger">
+                @Html.ActionLink("Voltar a lista de categorias", "Index", null, new { @class = "btn btn-primary" })
             </div>
         }
     </div>
