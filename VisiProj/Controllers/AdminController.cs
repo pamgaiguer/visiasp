@@ -19,7 +19,7 @@ namespace VisiProj.Controllers
         public ActionResult Index()
         {
             List<ProjetoModel> p = db.Projetos.Where(t => !t.Deleted).ToList();
-
+            //OrderBy(t => t.Nome)
             return View(p);
         }
 
