@@ -426,6 +426,10 @@
     <Compile Include="Migrations\201409090016063_Update-Database.Designer.cs">
       <DependentUpon>201409090016063_Update-Database.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201411272208233_AddColumnTipoImagem.cs" />
+    <Compile Include="Migrations\201411272208233_AddColumnTipoImagem.Designer.cs">
+      <DependentUpon>201411272208233_AddColumnTipoImagem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CategoriaModel.cs" />
     <Compile Include="Models\ImagemProjetoModel.cs" />
@@ -531,6 +535,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201409090016063_Update-Database.resx">
       <DependentUpon>201409090016063_Update-Database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201411272208233_AddColumnTipoImagem.resx">
+      <DependentUpon>201411272208233_AddColumnTipoImagem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
