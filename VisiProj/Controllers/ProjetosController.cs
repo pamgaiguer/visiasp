@@ -20,58 +20,61 @@ namespace VisiProj.Controllers
         /// <returns>Html page with projects</returns>
         public ActionResult Index(int? catId, int? projId)
         {
-            List<CategoriaModel> cats = db.Categorias.OrderBy(t => t.Nome).ToList();
-            List<ProjetoModel> p = new List<ProjetoModel>();
-            List<ImagemProjetoModel> img = new List<ImagemProjetoModel>();
-
-            p = db.Projetos.Where(proj => proj.CategoriaId > 0 && !proj.Deleted).ToList();
-            foreach (var item in p)
+            IndexViewModel view = new IndexViewModel()
             {
-                img.AddRange(item.Imagens);
+                ProjetoId = projId == null ? 0 : projId,
+                CategoriaId = catId == null ? 0 : catId
+            };
+
+            view.Categorias = db.Categorias.OrderBy(t => t.Nome).ToList();
+            view.Projetos = db.Projetos.Where(proj => proj.CategoriaId > 0 && !proj.Deleted).ToList();
+
+            if (view.CategoriaId == 0)
+            {
+                view.Imagens = db.ImagemProjetos.Where(t => t.TipoImagem == TipoImagem.Thumb && t.Projeto != null && !t.Projeto.Deleted).ToList();
+            }
+            else 
+            {
+                if (view.ProjetoId == 0)
+                {
+                    view.Imagens = db.ImagemProjetos.Where(t => t.TipoImagem == TipoImagem.Thumb && 
+                        t.Projeto != null && !t.Projeto.Deleted && t.Projeto.CategoriaId == view.CategoriaId).ToList();
+                }
+                else
+                {
+                    view.Imagens = db.ImagemProjetos.Where(t => t.TipoImagem == TipoImagem.Thumb && 
+                        t.Projeto != null && !t.Projeto.Deleted && t.Projeto.Id == view.ProjetoId).ToList();
+                }
             }
 
-            //if (catId != null && catId > 0)
-            //{
-            //    p = db.Projetos.Where(proj => proj.CategoriaId == catId && !proj.Deleted).ToList();
-
-            //    if (projId != null && projId > 0)
-            //    {
-            //        img = db.Projetos.Where(proj => proj.Id == projId).FirstOrDefault().Imagens.ToList();
-            //    }
-            //    else
-            //    {
-            //        foreach (var item in p)
-            //        {
-            //            img.Add(item.Imagens.First());
-            //        }
-            //    }
-            //}
-            //else
-            //{
-            //    img = db.ImagemProjetos.Where(t => t.Projeto != null && !t.Projeto.Deleted)
-            //        .GroupBy(t => t.Projeto.Id, (key, g) => g.OrderBy(e => e.Id).FirstOrDefault()).ToList();
-            //}
-
-            ViewBag.CatId = catId;
-            ViewBag.ProjId = projId;
-            ViewBag.Projects = p;
-            ViewBag.Images = img;
-
-            return View (cats);
+            return View (view);
         }
 
-        public ActionResult ImageFromProject(int? projId)
+        public ActionResult GetThumb(int? categId)
         {
-            List<ProjetoModel> p = new List<ProjetoModel>();
             List<ImagemProjetoModel> img = new List<ImagemProjetoModel>();
 
-            p = db.Projetos.Where(proj => proj.CategoriaId > 0 && !proj.Deleted).ToList();
-            foreach (var item in p)
+            if (categId != null && categId > 0)
             {
-                img.AddRange(item.Imagens);
+                img = db.ImagemProjetos.Where(t => t.Projeto != null && !t.Projeto.Deleted && t.Projeto.CategoriaId == categId &&
+                    t.TipoImagem == TipoImagem.Thumb).ToList();
+            }
+            else
+            {
+                img = db.ImagemProjetos.Where(t => t.Projeto != null && !t.Projeto.Deleted && t.TipoImagem == TipoImagem.Thumb).ToList();
             }
 
-            return View();
+            return PartialView("_Thumb", img);
+        }
+
+        public ActionResult GetSlideShow(int projId)
+        {
+            List<ImagemProjetoModel> img = new List<ImagemProjetoModel>();
+
+            img = db.ImagemProjetos.Where(t => t.Projeto.Id == projId && 
+                t.TipoImagem == TipoImagem.SlideShow).ToList();
+
+            return PartialView("_SlideShow", img);
         }
     }
 }

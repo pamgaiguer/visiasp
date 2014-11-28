@@ -1,4 +1,4 @@
-﻿@model IEnumerable<VisiProj.Models.CategoriaModel>
+﻿@model VisiProj.Models.IndexViewModel
 
 @{
     ViewBag.Title = "Projetos";
@@ -6,120 +6,50 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 
     int activeId = (int?)ViewBag.ActiveId == null ? 0 : (int)ViewBag.ActiveId;
-
-    List<VisiProj.Models.ProjetoModel> projects = ViewBag.Projects;
-    List<VisiProj.Models.ImagemProjetoModel> images = ViewBag.Images;
-    int CatId = ViewBag.CatId == null ? 0 : ViewBag.CatId;
-    int ProjId = ViewBag.ProjId == null ? 0 : ViewBag.ProjId;
 }
 
 <div class="container">
     <div class="row">
+
         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 menuLateral">
             <ul id="menuCat" class="nav nav-pills nav-stacked box-lateral">
-                <li @(CatId == null || CatId == 0 ? "class=active" : "") data-categoria="0"><a href="/projetos">TODOS</a></li>
-                @foreach (var item in Model)
+                <li @(Model.CategoriaId == 0 ? "class=active" : "") data-categoria="0"><a href="/projetos">TODOS</a></li>
+                @foreach (var item in Model.Categorias)
                 {
-                    <li @(CatId == item.Id ? "class=active" : "") data-categoria="@(item.Id)">@Html.ActionLink(item.Nome, "Index", new { catId = item.Id })</li>
+                    <li @(Model.CategoriaId == item.Id ? "class=active" : "") data-categoria="@(item.Id)">@Html.ActionLink(item.Nome, "Index", new { catId = item.Id })</li>
 
-                    //if (CatId == item.Id)
-                    //{
                     <ul id="cat@(item.Id)" class="projectList" style="display: none;">
-                        @foreach (var p in projects.Where(t => t.CategoriaId == item.Id))
+                        @foreach (var p in Model.Projetos.Where(t => t.CategoriaId == item.Id))
                         {
-                            <li @(ProjId == p.Id ? "class=active-select" : "") data-categoria="@(item.Id)" data-projeto="@(p.Id)">@Html.RouteLink(p.Nome, "Projetos", new { catId = item.Id, projId = p.Id }, new { data_showcase = "", data_menu = "" })</li>
+                            <li @(Model.ProjetoId == p.Id ? "class=active-select" : "") data-categoria="@(item.Id)" data-projeto="@(p.Id)">@Html.RouteLink(p.Nome, "Projetos", new { catId = item.Id, projId = p.Id }, new { data_showcase = "", data_menu = "" })</li>
                         }
                     </ul>
-                    //}
                 }
             </ul>
             <hr />
-            @*@foreach (var d in projects)
-            {
-                <div id="@(d.Id)" class="projetoInfos">
-                    <h3 id="projName">@(d.Nome)</h3>
-                    <p>Área: <span id="projArea">@(d.Area)</span></p>
-                    <p>Local: <span id="projLocal">@(d.Local)</span></p>
-                    <p>Data: <span id="projData">@(d.Data)</span></p>
-                </div>
-                <hr />
-            }*@
         </div>
-        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 showPhotos">
-            <div id="expoPhoto" style="display: none;">
-                @foreach (var p in projects)
-                {
-                    <div data-showcase="@(p.Id)" style="display: none;">
-                        <div id="show@(p.Id)" class="carousel slide" data-ride="carousel" data-interval="false">
-                            <!-- Indicators -->
-                            <ol class="carousel-indicators">
-                                @{int countSlide = 0;}
-                                @foreach (var foto in p.Imagens.ToList())
-                                {
-                                    <li data-target="#show@(p.Id)" data-slide-to="@(countSlide)" @(countSlide == 0 ? "class=active" : "")></li>
-                                    countSlide++;
-                                }
-                            </ol>
 
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner">
-                                @{countSlide = 0;}
-                                @foreach (var foto in p.Imagens.ToList())
-                                {
-                                    <div class="item @(countSlide == 0 ? "active" : "")">
-                                        <img src="@foto.UrlNormal" alt="@foto.Projeto.Nome" class="center-block">
-                                    </div>
-                                    countSlide++;
-                                }
-                            </div>
-                            <!-- Controls -->
-                            <a class="left carousel-control" href="#show@(p.Id)" role="button" data-slide="prev">
-                                <span class="glyphicon glyphicon-chevron-left"></span>
-                            </a>
-                            <a class="right carousel-control" href="#show@(p.Id)" role="button" data-slide="next">
-                                <span class="glyphicon glyphicon-chevron-right"></span>
-                            </a>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                                <div id="projetoInfos" class="projetoInfos">
-                                    <h3 id="projName">@(p.Nome)</h3>
-                                    <p>Área: <span id="projArea">@(p.Area)</span></p>
-                                    <p>Local: <span id="projLocal">@(p.Local)</span></p>
-                                    <p>Data: <span id="projData">@(p.Data)</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
+        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 showPhotos">
+            
+            <div id="expoPhoto">
+                @if (Model.ProjetoId > 0)
+                {
+                    Html.Partial("_SlideShow", Model.Imagens);
                 }
             </div>
 
             <div id="photoContainer" style="display: none;">
-                @foreach (var foto in images)
+                @if (Model.ProjetoId == 0)
                 {
-                    <div data-proj-image
-                         @(foto.UrlMiniatura.Contains("001-mini") ? "data-showonly" : "")
-                         data-categoria="@(foto.Projeto.CategoriaId)"
-                         data-projeto="@(foto.Projeto.Id)"
-                         style="display: none;">
-                        <a href="#" data-showcase>
-                            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 projectsThumb">
-                                <img src="@foto.UrlMiniatura" class="img-responsive">
-                                <div class="caption">
-                                    <p class="projetoLegend margin-top-5">@(foto.Projeto.Nome)</p>
-                                    <p class="projetoLegend margin-bottom-5">@(foto.Projeto.Local) | @(foto.Projeto.Data)</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                    @Html.Partial("_Thumb", Model.Imagens)
                 }
             </div>
 
         </div>
+
     </div>
 </div>
 
 @section javascripts {
-    <script src="~/js/main.min.js"></script>
+    <script src="~/js/main.js"></script>
 }

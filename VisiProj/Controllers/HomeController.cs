@@ -14,8 +14,9 @@ namespace VisiProj.Controllers
 		public ActionResult Index ()
 		{
             List<ImagemProjetoModel> imagens = db.ImagemProjetos
-                .Where(t => t.Projeto != null && t.Projeto.CategoriaId > 0 && !t.Projeto.Deleted)
-                .GroupBy(t => t.Projeto.Id, (key, g) => g.OrderBy(e => e.Id).FirstOrDefault()).ToList();
+                .Where(t => t.Projeto != null && t.Projeto.CategoriaId > 0 && !t.Projeto.Deleted && t.TipoImagem == TipoImagem.FotoCapa)
+                .ToList();
+                //.GroupBy(t => t.Projeto.Id, (key, g) => g.OrderBy(e => e.Id).FirstOrDefault()).ToList();
 
 			return View(imagens);
 		}

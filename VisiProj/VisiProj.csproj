@@ -373,6 +373,14 @@
     </Content>
     <Content Include="js\_reference.js" />
     <Content Include="favicon.ico" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -430,11 +438,16 @@
     <Compile Include="Migrations\201411271317395_AddTipo.Designer.cs">
       <DependentUpon>201411271317395_AddTipo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201411280440197_Difference.cs" />
+    <Compile Include="Migrations\201411280440197_Difference.Designer.cs">
+      <DependentUpon>201411280440197_Difference.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CategoriaModel.cs" />
     <Compile Include="Models\ImagemProjetoModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\ProjetoModel.cs" />
+    <Compile Include="Models\ProjetoViewModel.cs" />
     <Compile Include="Models\TipoImagem.cs" />
     <Compile Include="Models\VisiContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -502,6 +515,9 @@
       <DependentUpon>main.min.js</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\visiarq.com.br - Web Deploy.pubxml" />
+    <Content Include="Views\Projetos\_Thumb.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Projetos\_SlideShow.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -539,6 +555,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201411271317395_AddTipo.resx">
       <DependentUpon>201411271317395_AddTipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201411280440197_Difference.resx">
+      <DependentUpon>201411280440197_Difference.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

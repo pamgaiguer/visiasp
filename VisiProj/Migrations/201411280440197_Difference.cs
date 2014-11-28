@@ -3,16 +3,14 @@ namespace VisiProj.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddTipo : DbMigration
+    public partial class Difference : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.ImagemProjetoModels", "TipoImagem", c => c.Int());
         }
         
         public override void Down()
         {
-            DropColumn("dbo.ImagemProjetoModels", "TipoImagem");
         }
     }
 }

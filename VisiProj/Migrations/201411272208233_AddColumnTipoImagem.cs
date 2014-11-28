@@ -3,7 +3,7 @@ namespace VisiProj.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddTipo : DbMigration
+    public partial class AddColumnTipoImagem : DbMigration
     {
         public override void Up()
         {

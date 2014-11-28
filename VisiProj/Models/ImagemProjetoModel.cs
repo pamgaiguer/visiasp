@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VisiProj.Models
 {
@@ -12,7 +13,7 @@ namespace VisiProj.Models
 
         public string UrlMiniatura { get; set; }
 
-        public TipoImagem Tipo { get; set; }
+        public TipoImagem? TipoImagem { get; set; }
 
         public ImagemProjetoModel()
         {
