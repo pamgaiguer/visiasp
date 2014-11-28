@@ -59,5 +59,19 @@ namespace VisiProj.Controllers
 
             return View (cats);
         }
+
+        public ActionResult ImageFromProject(int? projId)
+        {
+            List<ProjetoModel> p = new List<ProjetoModel>();
+            List<ImagemProjetoModel> img = new List<ImagemProjetoModel>();
+
+            p = db.Projetos.Where(proj => proj.CategoriaId > 0 && !proj.Deleted).ToList();
+            foreach (var item in p)
+            {
+                img.AddRange(item.Imagens);
+            }
+
+            return View();
+        }
     }
 }

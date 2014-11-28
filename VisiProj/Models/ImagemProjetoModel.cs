@@ -12,6 +12,8 @@ namespace VisiProj.Models
 
         public string UrlMiniatura { get; set; }
 
+        public TipoImagem Tipo { get; set; }
+
         public ImagemProjetoModel()
         {
 

@@ -426,11 +426,16 @@
     <Compile Include="Migrations\201409090016063_Update-Database.Designer.cs">
       <DependentUpon>201409090016063_Update-Database.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201411271317395_AddTipo.cs" />
+    <Compile Include="Migrations\201411271317395_AddTipo.Designer.cs">
+      <DependentUpon>201411271317395_AddTipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CategoriaModel.cs" />
     <Compile Include="Models\ImagemProjetoModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\ProjetoModel.cs" />
+    <Compile Include="Models\TipoImagem.cs" />
     <Compile Include="Models\VisiContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -531,6 +536,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201409090016063_Update-Database.resx">
       <DependentUpon>201409090016063_Update-Database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201411271317395_AddTipo.resx">
+      <DependentUpon>201411271317395_AddTipo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
