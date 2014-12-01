@@ -1,11 +1,11 @@
 ﻿@model VisiProj.Models.ImagemProjetoModel
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Imagem do Projeto | Exclusão";
 }
 <div class="container">
     <div class="row"></div>
-    <h2>Imagem do Projeto - Exclusão</h2>
+    <h2>Imagem do Projeto | Exclusão</h2>
     <ol class="breadcrumb">
         Você está em:
         <li><a href="/ImagemProjeto/Index">Imagens dos projetos</a></li>
@@ -13,7 +13,7 @@
     </ol>
     <div>
         <div class="alert bg-danger text-center">
-            <p>Tem certeza que deseja apagar esta imagem do projeto?</p>
+            <p>Tem certeza que deseja apagar esta imagem do projeto @Html.DisplayFor(model => Model.Projeto.Nome)?</p>
         </div>
         <hr />
         <dl class="dl-horizontal">
