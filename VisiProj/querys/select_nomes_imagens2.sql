@@ -9,4 +9,5 @@ INNER JOIN ImagemProjetoModels ON ProjetoModels.Id = ImagemProjetoModels.Projeto
 WHERE ProjetoModels.deleted = 0
 order by ProjetoModels.Nome;
 
-select * from ImagemProjetoModels where TipoImagem = 1;
+select * from ImagemProjetoModels where id > 252
+UPDATE ImagemProjetoModels set TipoImagem = 2 where Id > 252
