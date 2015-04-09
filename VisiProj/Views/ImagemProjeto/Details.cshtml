@@ -1,7 +1,7 @@
 ﻿@model VisiProj.Models.ImagemProjetoModel
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Imagens do Projeto | Detalhes";
 }
 <div class="container">
     <div class="row">
@@ -12,29 +12,21 @@
             <li class="active">Detalhes</li>
         </ol>
         <div>
-            <h4>ImagemProjetoModel</h4>
+            <h4>Detalhar imagens para o projeto <strong class="text-info">@Html.DisplayFor(model => Model.Projeto.Nome)</strong></h4>
             <hr />
             <dl class="dl-horizontal">
-                <dt>
-                    @Html.DisplayNameFor(model => model.UrlNormal)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.UrlNormal)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.UrlMiniatura)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.UrlMiniatura)
-                </dd>
+                <dt>@Html.DisplayNameFor(model => model.UrlNormal)</dt>
+                <dd>@Html.DisplayFor(model => model.UrlNormal)</dd>
+                <dt>@Html.DisplayNameFor(model => model.TipoImagem)</dt>
+                <dd>@Html.DisplayFor(model => model.TipoImagem)</dd>
+                <dt>@Html.DisplayNameFor(model => model.UrlMiniatura)</dt>
+                <dd>@Html.DisplayFor(model => model.UrlMiniatura)</dd>
             </dl>
         </div>
+        <br /><br />
         <p>
-            @Html.ActionLink("Editar", "Edit", new { id = Model.Id }) |
-            @Html.ActionLink("Voltar a lista", "Index", new { id = Model.Projeto.Id })
+            @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-warning" })
+            @Html.ActionLink("Voltar a lista", "Index", new { id = Model.Projeto.Id }, new { @class = "btn btn-primary" })
         </p>
     </div>
 </div>

@@ -14,6 +14,18 @@ namespace VisiProj
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "GetSlideShow",
+                url: "projetos/GetSlideShow",
+                defaults: new { controller = "Projetos", action = "GetSlideShow" }
+            );
+
+            routes.MapRoute(
+                name: "GetThumb",
+                url: "projetos/GetThumb",
+                defaults: new { controller = "Projetos", action = "GetThumb" }
+            );
+
+            routes.MapRoute(
                 name: "ProjetosWithoutProj",
                 url: "projetos/{catId}",
                 defaults: new { controller = "Projetos", action = "Index", catId = UrlParameter.Optional }

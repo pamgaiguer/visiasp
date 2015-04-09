@@ -1,0 +1,56 @@
+﻿@model IEnumerable<VisiProj.Models.ImagemProjetoModel>
+
+@{
+    var proj = Model.FirstOrDefault().Projeto;
+
+    string name = proj.Nome;
+    string area = proj.Area;
+    string local = proj.Local;
+    string data = proj.Data;
+}
+
+
+@{int countSlide = 0;}
+<div id="visiShow" class="carousel slide" data-ride="carousel" data-interval="false">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        @{countSlide = 0;}
+        @foreach (var p in Model)
+        {
+            <li data-target="#visiShow" data-slide-to="@(countSlide)" @(countSlide == 0 ? "class=active" : "")></li>
+            countSlide++;
+        }
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        @{countSlide = 0;}
+        @foreach (var p in Model)
+        {
+            <div class="item @(countSlide == 0 ? "active" : "")">
+                <img src="@p.UrlNormal" alt="@p.Projeto.Nome" class="center-block">
+            </div>
+            countSlide++;
+        }
+    </div>
+    <!-- Controls -->
+    <a class="left carousel-control" href="#visiShow" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#visiShow" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div id="projetoInfos" class="projetoInfos">
+            <h3 id="projName">@(name)</h3>
+            <p>Área: <span id="projArea">@(area)</span></p>
+            <p>Local: <span id="projLocal">@(local)</span></p>
+            <p>Data: <span id="projData">@(data)</span></p>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+

@@ -22,7 +22,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.UrlNormal, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.UrlNormal, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.UrlNormal, new { htmlAttributes = new { @class = "form-control", @placeholder = "Caminho da foto dentro do sistema, ex: /images/projetos/..." } })
                         @Html.ValidationMessageFor(model => model.UrlNormal, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -30,8 +30,15 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.UrlMiniatura, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.UrlMiniatura, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.UrlMiniatura, new { htmlAttributes = new { @class = "form-control", @placeholder = "Não preencher" } })
                         @*@Html.ValidationMessageFor(model => model.UrlMiniatura, "", new { @class = "text-danger" })*@
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    @Html.LabelFor(model => model.TipoImagem, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EnumDropDownListFor(model => model.TipoImagem,new { @class = "form-control", @required = "true" })
                     </div>
                 </div>
 
@@ -44,7 +51,7 @@
         }
 
         <div>
-            @Html.ActionLink("Voltar a lista", "Index", new { id = Model.Projeto.Id }, new { @class="btn btn-primary" })
+            @Html.ActionLink("Voltar a lista", "Index", new { id = Model.Projeto.Id }, new { @class = "btn btn-primary" })
         </div>
 
     </div>

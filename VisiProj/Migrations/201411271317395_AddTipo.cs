@@ -7,12 +7,12 @@ namespace VisiProj.Migrations
     {
         public override void Up()
         {
-            AddColumn("dbo.ImagemProjetoModels", "Tipo", c => c.Int(nullable: false));
+            AddColumn("dbo.ImagemProjetoModels", "TipoImagem", c => c.Int());
         }
         
         public override void Down()
         {
-            DropColumn("dbo.ImagemProjetoModels", "Tipo");
+            DropColumn("dbo.ImagemProjetoModels", "TipoImagem");
         }
     }
 }
